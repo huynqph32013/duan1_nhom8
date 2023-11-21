@@ -1,4 +1,6 @@
 <?php 
+session_start();
+ob_start();
  include '../model/pdo.php';
  include '../model/sqldanhmuc.php';
  include '../model/sqlsanpham.php';
@@ -6,6 +8,8 @@
  include '../model/sqlbinhluan.php';
  include '../model/cart.php';
  include '../model/combo.php';
+ if(!isset($_SESSION['combo'])) $_SESSION['combo']=[];
+
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +28,7 @@
         <?php 
             $dsdm = danhsach_danhmuc();
             $dskh = danhsach_khachhang();
+            $dssp = danhsach_sanpham();
             if(isset($_GET['act']) && $_GET['act']){
                 $act = $_GET['act'];
                 switch($act){
@@ -195,7 +200,7 @@
                     break;
                 }
                 case 'combo':{
-                    $combo = danhsach_combo();
+                    $combodetail = danhsach_combodetail();
                     include './combo/dscombo.php';
                     break;
                 }
@@ -209,11 +214,32 @@
                             $img = time() . "_" . $_FILES['img']['name'];
                             move_uploaded_file($_FILES['img']['tmp_name'], "../uploads/$img");
                         }
-                        add_combo($name,$giamgia,$img,$mota);
+                        $idcombodetails = add_combodetails($name,$giamgia,$img,$mota);
+
+                        if(isset($_POST['sanphamne'])&& is_array($_POST['sanphamne'])){
+                            $spne = $_POST['sanphamne'];
+                            foreach($spne as $value){
+                                $idsp = $_POST['idspcombo'];
+                                $namesp = $_POST['namesp'];
+                                $imgsp = $_POST['imgsp'];
+                                $giasp = $_POST['giasp'];
+                                add_combo($idsp,$namesp,$imgsp,$giasp,$idcombodetails);
+
+                            }
+                        }
+                        
                         header('location: ?act=combo');
                         
                     }
                     include './combo/addcombo.php';
+                    break;
+                }
+
+                case 'chitietcomboedtails':{
+                    if(isset($_GET['idcombodetails'])&&($_GET['idcombodetails'])){
+                        $dscombodetails = danhsach_combodetails($_GET['idcombodetails']);
+                    }
+                    include 'combo/chitietcombo.php';
                     break;
                 }
                 case 'editcombo':{

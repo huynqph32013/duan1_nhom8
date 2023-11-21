@@ -16,17 +16,21 @@
     </tr>
   </thead>
   <tbody>
-    <?php foreach($combo as $value):?>
+    <?php foreach($combodetail as $value):?>
     <form action="?act=delcombo" method="post">
     <tr>
         <th><input type="checkbox" name="slcombo[]"></th>
-      <th scope="row"><?php echo $value['id_combo']?></th>
+      <th scope="row"><?php echo $value['id_combo_details']?></th>
       <td><?php echo $value['ten_combo']?></td>
       <td><img width="50px" height="50px" src="../uploads/<?php echo $value['imgcombo']?>" alt=""></td>
       <td><?php echo $value['discout']?></td>
       <td><?php echo $value['mo_ta']?></td>
 
-      <td><a style="text-decoration: none;color:black" href="?act=editcombo&idcombo=<?php echo$value['id_combo']?>">Sửa</a> | <a style="text-decoration: none;color:black" href="?act=delcombo&idcombo=<?php echo$value['id_combo']?>">Xóa</a></td>
+      <td>
+        <a href="?act=chitietcomboedtails&idcombodetails=<?php echo $value['id_combo_details']?>">Xem</a>
+        <a href="?act=delcombodetails&idcombodetails=<?php echo $value['id_combo_details']?>">Sửa</a>
+        <a href="?act=xoacombodetails&idcombodetails=<?php echo $value['id_combo_details']?>">Xóa</a>
+      </td>
     </tr>
     </form>
     <?php endforeach;?>

@@ -1,12 +1,30 @@
 <?php 
-    function danhsach_combo(){
-            $sql = "select * from combo";
+
+
+    function danhsach_combodetails($idcombodetails){
+        $sql = "
+        select combo_detail.ten_combo , combo_detail.discout, combo_detail.imgcombo, combo_detail.mo_ta, combo.id_sp, combo.img_details,combo.name_details,combo.gia_sp 
+        from combo_detail
+        inner join combo on combo_detail.id_combo_details = combo.id_combo_details
+        where combo_detail.id_combo_details = $idcombodetails
+        ";
+        $result= pdo_query_one($sql);
+        return $result;
+
+    }
+
+    function add_combo($idsp,$namesp,$imgsp,$giasp,$idcombodetails){
+      $sql = "insert into `combo`(`id_sp`, `img_details`, `name_details`, `gia_sp`, `id_combo_details`) VALUES ('$idsp','$imgsp','$namesp','$giasp','$idcombodetails')";
+      pdo_execute($sql);
+    }
+    function danhsach_combodetail(){
+            $sql = "select * from combo_detail";
             $result = pdo_query($sql);
             return $result;
     }
-    function add_combo($name,$giamgia,$img,$mota){
-        $sql = "insert into `combo`(`ten_combo`, `discout`, `imgcombo` ,`mo_ta`) VALUES ('$name','$giamgia','$img','$mota')";
-        pdo_execute($sql);
+    function add_combodetails($name,$giamgia,$img,$mota){
+        $sql = "insert into `combo_detail`(`ten_combo`, `discout`, `imgcombo` ,`mo_ta`) VALUES ('$name','$giamgia','$img','$mota')";
+        return pdo_execute_id($sql);
     }
     function getone_combo($id){
         $sql = "select * from `combo` WHERE `id_combo`= $id";
