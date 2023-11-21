@@ -73,7 +73,7 @@ ob_start();
                     break;
                 }
                 case'dssp':{
-                    $dssp = danhsach_sanpham();
+                   
                     include './sanpham/dssp.php';
                     break;
                 }
@@ -205,6 +205,7 @@ ob_start();
                     break;
                 }
                 case 'addcombo':{
+                       
                     if(isset($_POST['btnsubmit'])){
                         $name = $_POST['tencombo'];
                         $giamgia = $_POST['giamgiacb'];
@@ -216,14 +217,18 @@ ob_start();
                         }
                         $idcombodetails = add_combodetails($name,$giamgia,$img,$mota);
 
-                        if(isset($_POST['sanphamne'])&& is_array($_POST['sanphamne'])){
-                            $spne = $_POST['sanphamne'];
-                            foreach($spne as $value){
-                                $idsp = $_POST['idspcombo'];
-                                $namesp = $_POST['namesp'];
-                                $imgsp = $_POST['imgsp'];
-                                $giasp = $_POST['giasp'];
-                                add_combo($idsp,$namesp,$imgsp,$giasp,$idcombodetails);
+                        if(isset($_POST['sanphamNe'])){
+                            $tonggia = 0;
+                            foreach($_POST['sanphamNe'] as $value){
+                                
+                                $idsp = $value;
+                                $onesp = getone_sanpham($idsp);
+                                
+                                $namesp = $onesp['name_sp'];
+                                $imgsp = $onesp['image'];
+                                $giasp = $onesp['gia'];
+                                $tonggia += $onesp['gia'];;
+                                add_combo($idsp,$namesp,$imgsp,$giasp,$idcombodetails,$tonggia);
 
                             }
                         }
@@ -237,7 +242,8 @@ ob_start();
 
                 case 'chitietcomboedtails':{
                     if(isset($_GET['idcombodetails'])&&($_GET['idcombodetails'])){
-                        $dscombodetails = danhsach_combodetails($_GET['idcombodetails']);
+                        $dscombodetails = getone_combodetail($_GET['idcombodetails']);
+                        $spdt = getone_combo_id($_GET['idcombodetails']);
                     }
                     include 'combo/chitietcombo.php';
                     break;
@@ -297,6 +303,14 @@ ob_start();
                         
                     }
                     include 'donhang/editdh.php';
+                    break;
+                }
+                case 'delspdetail':{
+                    if(isset($_GET['idsp'])&&($_GET['idsp'])){
+                        del_details($_GET['idsp']);
+                        header('location: ?act=combo');
+                    }
+                    
                     break;
                 }
                 case 'editdh':{

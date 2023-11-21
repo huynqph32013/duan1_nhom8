@@ -212,7 +212,7 @@ if(!isset($_SESSION['myhd'])) $_SESSION['myhd']=[];
             }
             // COm Bo
             case 'combo':{
-              $dscm = danhsach_combo();
+              
               include 'config/allcombo.php';
               break;
             }

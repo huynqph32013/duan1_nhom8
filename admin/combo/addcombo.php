@@ -37,14 +37,13 @@
       <h3 style="text-align: center;">Chọn Sản Phẩm cho combo của bạn</h3>
   <?php foreach($dssp as $value):?>
     <div class="col-1"></div>
-    <input type="hidden" name="idspcombo" value="<?php echo $value['id_sp']?>">
-    <input type="hidden" name="namesp" value="<?php echo $value['name_sp']?>">
-    <input type="hidden" name="imgsp" value="<?php echo $value['image']?>">
-    <input type="hidden" name="giasp" value="<?php echo $value['gia']?>">
+
       <div style="margin-top: 20px;" class="col-5">
         <div class="row">
-          <div class="col-3"><input type="checkbox" name="sanphamne[]">   <img width="50px" height="50px" src="../uploads/<?php echo $value['image']?>" alt=""></div>
-          <div class="col-6"><p style="line-height:50px"><?php echo $value['name_sp']?></p></div>
+          <div class="col-3"><input type="checkbox" name="sanphamNe[]" value="<?php echo $value['id_sp']?>">   
+          <img width="50px" height="50px" src="../uploads/<?php echo $value['image']?>" alt=""></div>
+          <div class="col-6"><p style="line-height:50px"><?php echo $value['name_sp']?></p></div> 
+
           <div class="col-3"><p style="line-height:50px"><?php echo number_format($value['gia'])?> VND</p></div>
           <hr>
         </div>
