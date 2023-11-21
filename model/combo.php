@@ -13,8 +13,8 @@
 
     }
 
-    function add_combo($idsp,$namesp,$imgsp,$giasp,$idcombodetails){
-      $sql = "insert into `combo`(`id_sp`, `img_details`, `name_details`, `gia_sp`, `id_combo_details`) VALUES ('$idsp','$imgsp','$namesp','$giasp','$idcombodetails')";
+    function add_combo($idsp,$namesp,$imgsp,$giasp,$idcombodetails,$tonggia){
+      $sql = "insert into `combo`(`id_sp`, `img_details`, `name_details`, `gia_sp`, `id_combo_details`, `tong_gia`) VALUES ('$idsp','$imgsp','$namesp','$giasp','$idcombodetails','$tonggia')";
       pdo_execute($sql);
     }
     function danhsach_combodetail(){
@@ -29,6 +29,18 @@
     function getone_combo($id){
         $sql = "select * from `combo` WHERE `id_combo`= $id";
         $result = pdo_query_one($sql);
+        return $result;
+
+    }
+    function getone_combodetail($id){
+        $sql = "select * from `combo_detail` WHERE `id_combo_details`= $id";
+        $result = pdo_query_one($sql);
+        return $result;
+
+    }
+    function getone_combo_id($id){
+        $sql = "select * from `combo` WHERE `id_combo_details`= $id";
+        $result = pdo_query($sql);
         return $result;
 
     }
@@ -61,5 +73,10 @@ function chitiet_combo($idcb){
     from combo left join sanpham on sanpham.id_combo = combo.id_combo where combo.id_combo = $idcb";
     $result = pdo_query($sql);
     return  $result;
+}
+
+function del_details($idsp){
+    $sql = "delete from combo where id_sp = $idsp";
+    pdo_execute($sql);   
 }
 ?>
