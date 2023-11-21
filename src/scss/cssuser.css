@@ -1,0 +1,49 @@
+.wrapperlogin{
+    width: 100%;
+}
+.wrapper{
+    width: 100%;
+}
+.mainlogin{
+    width: 500px;margin-left: 668px;margin-top: 100px;margin-bottom: 50px;
+}
+
+.maindm{
+    margin-top: 200px;width: 1440px;margin-left: 218px;
+}
+.mainsp{
+    margin-top: 300px;width: 1440px;margin-left: 218px;margin-bottom: 200px;
+}
+.mainhhh{
+    background-color: #FFB30E;height: 40px;border-radius: 0px 0px 20px 20px;
+}
+.mainhhh a{
+    line-height: 40px;color: #fff;
+}
+.mainhhh ul li:hover{
+    background-color: #c08f27;
+}
+#inputsl{
+    width: 30px;border-radius: 10%;
+}
+.btnupd{
+    width: 30px;margin: 0px 5px 0px 5px;border-radius: 30%;border: none;background-color: #FFB30E;
+}
+#submitmuahang{
+    border-radius: 20px;margin-top: 50px ;
+}
+.imgsp img{
+    border-radius: 20px;
+}
+.mainsite{
+    margin-top: 200px;margin-bottom: 200px;
+}
+.thongtinsp{
+    margin-bottom: 200px;
+}
+.mainshopingcart{
+    margin-bottom: 200px ;
+}
+#hoverm:hover{
+    color: #FFB30E;
+}
