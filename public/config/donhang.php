@@ -14,7 +14,9 @@
       <th scope="col">Ngày Đặt</th>
       <th scope="col">Tổng giá</th>
       <th scope="col">Chi Tiết</th>
-      <th scope="col">Đơn Hàng</th>
+      <th>Hủy</th>
+      <th>Nhận</th>
+      <th scope="col" style="text-align: center;" >Đơn Hàng</th>
     </tr>
   </thead>
   <tbody>
@@ -32,7 +34,17 @@
    
       
       <td><?php echo giaohang($value['chitietbill'])?></td>
-      <td><a href="?act=ctdh&iddh=<?php echo $value['id_bill']?>">Xem</a></td>
+      <td><?php if($value['chitietbill']== 0):?><a href="?act=huydh&iddh=<?php echo $value['id_bill']?>">Hủy</a><?php endif;?></td>
+        <td style="text-align: center;" >
+      <?php if($value['chitietbill']==2):?>
+      <a href="?act=nhanhang&iddh=<?php echo $value['id_bill']?>">Nhận</a>  
+      <?php endif;?>
+
+      </td>
+      <td style="text-align: center;" >
+
+      <a href="?act=ctdh&iddh=<?php echo $value['id_bill']?>">Xem</a>
+      </td>
   
     </tr>
     <?php endforeach?>

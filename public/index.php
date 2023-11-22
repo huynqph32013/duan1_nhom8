@@ -44,7 +44,7 @@ if(!isset($_SESSION['myhd'])) $_SESSION['myhd']=[];
     <!-- ===============================================-->
     <link href="assets/css/theme.css" rel="stylesheet" />
     <link rel="stylesheet" href="../src/scss/cssuser.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
 
 
@@ -277,6 +277,19 @@ if(!isset($_SESSION['myhd'])) $_SESSION['myhd']=[];
                 header('location: ?act=allsp');
               }
               break;
+            }
+
+            case 'huydh':{
+              if(isset($_GET['iddh']) && ($_GET['iddh'])){
+                doi_ttdh($_GET['iddh']);
+                header('location: ?act=donhang');
+              }
+              break;
+            }
+            case 'nhanhang':{
+              if(isset($_GET['iddh']) && ($_GET['iddh'])){
+                nhanhang($_GET['iddh']);
+              }
             }
 
 

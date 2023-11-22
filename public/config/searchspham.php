@@ -23,7 +23,7 @@
             <input type="hidden" name="img" value="<?php echo $value['image'];?>">
             <input type="hidden" name="gia" value="<?php echo $value['gia'];?>">
     <div class="row">
-      <div class="col-6"><a href="?act=chitietsp&idsp=<?php echo $value['id_sp']?>" class="btn btn-primary" >Xem</a></div>
+      <div class="col-6"><a href="?act=chitietsp&idsp=<?php echo $value['id_sp']?>" class="btn btn-primary">Xem</a></div>
       <div class="col-4"><button type="submit" name="submitmua" class="btn btn-primary btn-block mb-4">Mua</button></div>
     </div>
     </form>

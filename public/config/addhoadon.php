@@ -18,7 +18,7 @@
                     <div style="margin-top:10px" class="row">
                         <div class="col-4"> Số Lượng </div>
                         <div class="col-5">
-                            <button class="btnupd" onclick="giam(this)"> - </button><span><?php echo $cart[4]?></span><button class="btnupd" onclick="tang(this)"> + </button>
+                            <button class="btnupd" onclick="giam(this)"> - </button><span id="sluongg"><?php echo $cart[4]?></span><button class="btnupd" onclick="tang(this)"> + </button>
                         </div>
                         <div class="col-3"><a href="?act=delhd&idhd=<?php echo $i?>">Xóa</a></div>
                     </div>
@@ -29,7 +29,10 @@
                     $i++;
                    } 
                    ?>
-
+                        <div style="margin-top: 50px;" class="row">
+                            <div class="col-7"></div>
+                            <div class="col-5"><button type="button" class="btn btn-primary" data-mdb-ripple-init>Lưu</button></div>
+                        </div>
                     <hr>
                     <div class="row">
                         <div class="col-4"><p>Số Lượng :</p></div>
@@ -49,15 +52,24 @@
     var slcu = cha.children[1];
     var slm = parseInt(slcu.innerText) + 1;
     slcu.innerText = slm;
-
+    updategia();
    
 
    }
+
+
+   function updategia(){
+        var sl = $("#sluongg").text();
+        console.log(sl);
+   }
+
+
    function giam(x){
     var cha = x.parentElement;
     var slcu = cha.children[1];
     if(parseInt(slcu.innerText)>1){
     var slm = parseInt(slcu.innerText) - 1;
     slcu.innerText = slm;}
+    updategia();
    }
 </script>

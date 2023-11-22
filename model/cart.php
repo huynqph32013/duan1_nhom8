@@ -52,6 +52,7 @@ function giaohang($n){
     case 1: echo "Đang Xử Lý";break;
     case 2: echo "Đang Giao Hàng";break;
     case 3: echo "Đã Nhận Hàng";break;
+    case 4: echo "Đã Hủy";break;
     default : echo "Đang Xác Nhận";break;
   }
 }
@@ -78,13 +79,28 @@ function chitietdh($n){
           case 2:
               $tt = 'Đang Giao Hàng';
               break;
-          case 3:
-              $tt = 'Đã Giao Hàng';
+          case 3: 
+              $tt = 'Đã Nhận Hàng';
               break;
+          case 4: 
+            $tt = 'Đã Hủy';
+            break;
+
           default:
               $tt = 'Đang Xác Nhận';
               break;
   }
   return $tt;
+}
+
+function doi_ttdh($iddh){
+  $sql = "update `bill` set `chitietbill`= 4 WHERE  `id_bill` = $iddh";
+  pdo_execute($sql);
+}
+
+
+function nhanhang($iddh){
+  $sql = "update `bill` set `chitietbill`= 3 WHERE  `id_bill` = $iddh";
+  pdo_execute($sql);
 }
 ?>
