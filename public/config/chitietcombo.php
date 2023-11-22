@@ -1,108 +1,63 @@
-<div class="wrapper">
-    <div class="maindm">
+<div class="mgt"></div>
+<div style="margin-top: 100px;" class="container">
+  <a href="?act=combo"><< Back</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tên Combo</th>
+      <th scope="col">Ảnh combo</th>
+      <th scope="col">Mô Tả combo</th>
+      <th scope="col">Giảm Giá</th>
+      <th scope="col">Sản Phẩm</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr>
+      <td><?php echo $dscombodetails['ten_combo']?></td>
+      <td><img style="border-radius: 5px;" width="50px" height="50px" src="../uploads/<?php echo $dscombodetails['imgcombo']?>" alt="Loi"></td>
+      <td><?php echo $dscombodetails['mo_ta']?></td>
+      <td style="color:red"><?php echo $dscombodetails['discout']?> %</td>
+      <td>
+
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tên sp</th>
+      <th scope="col">img sp</th>
+      <th scope="col">Giá</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($spdt as $spdt):?>
+    <tr>
+      <td><?php echo $spdt['name_details']?></td>
+      <td><img style="border-radius: 5px;" width="50px" height="50px" src="../uploads/<?php echo $spdt['img_details']?>" alt="Loi"></td>
+      <td><?php echo number_format($spdt['gia_sp'])?> VND</td>
+  
       
-        <div class="row sp">
-        <a style="text-decoration: underline;" href="?act=home">< Back</a>
+    </tr>
+    <?php endforeach;?>
+    <tr>
+      <td>Tổng Giá: </td>
+      <td><?php 
+        $giadagiam =$spdt['tong_gia']-($dscombodetails['discout'] * ($spdt['tong_gia'] / 100));
+      ?></td>
+      <td><p style="text-decoration: line-through;" ><?php echo number_format($spdt['tong_gia'])?> VND</p><p style="color:red" ><?php echo number_format($giadagiam)?> VND</p> </td>
+      <td></td>
+    </tr>
+    
+  </tbody>
 
-
-
-          <div class="col-3">
-               
-                <br>
-                <div class="row">
-                  <h4 style="text-align: center;">Danh Mục</h4>
-                  <?php foreach($dsdm as $value):?>
-                  <div style="text-align: center;" class="col-12">
-                    <a href="?act=showdm&iddm=<?php echo $value['id_dm']?>"><?php echo $value['ten_dm']?></a>
-                  </div>
-                  <hr>
-                  <?php endforeach;?>
-                </div>
-                <h3 style="text-align: center;margin-top:50px">Lọc</h3>
-               <form action="?act=timkiemsp" method="post">
-                    <div style="margin-top: 20px;" class="boxinput">
-                    <div class="form-outline">
-                    <input type="text" id="form12" name="namesp" class="form-control" />
-                    <label class="form-label" for="form12">Tên Sản Phẩm</label>
-                    </div>
-                    </div>
-                    <!--  -->
-             
-
-                  <!-- Checked checkbox -->
-                  <div style="margin-top: 20px ;text-align:center" class="form-check">
-                  <label class="form-check-label" for="flexCheckChecked">Các Sản Phẩm Giảm Giá</label>
-                  <input class="form-check-input" type="checkbox" name="giamgiacb" value="" id="flexCheckChecked" checked/>
-                  </div>
-                    <!--  -->
-
-
-
-                    <!--  -->
-                    <div class="row">
-                     <div class="col-12">
-                    <select class="form-select form-select-sm" name="giatien" aria-label="Small select example">
-                    <option value="0" selected>Chọn Giá</option>
-                    <option value="1">0 VND - 100.000 VND</option>
-                    <option value="2">100.000 VND - 200.000 VND</option>
-                    <option value="3">200.000 VND - 500.000VND</option>
-                    <option value="4">500.000VND - 1.000.000VND</option>
-                    <option value="5"> > 1.000.000 NVD</option>
-                    </select>
-                    </div>
-                    </div>
-                    <!--  -->
-                      <div style="margin-top: 50px;" class="row">
-                      <div class="col-6"></div>
-                    <div class="col-4">
-                    <button type="submmit" name="btnsearch" class="btn btn-primary">Button</button>
-                    </div>
-                
-                      </div>
-                      <hr>
-               </form>
-               <div class="row">
-                   <?php 
-                        include 'addhoadon.php';
-                   ?>
-               </div>
-          </div>
-          
-
-
-
-
-          <div class="col-9">
-          
-            <div class="row product">
-            <div class="row">
-        <div class="col-1"></div>
-        <div class="col-5">
-            <img  src="../uploads/<?php echo $onecb['imgcombo']?>" alt="loi">
-        </div>
-        <div class="col-6">
-            <div class="row">
-                <h2><?php echo $onecb['ten_combo']?></h2>
-            </div>
-            <h3 style="text-align:center">Sản Phẩm</h3>
-            <?php foreach ($combo as $value):?>
-            <div style="margin-top: 10px;" class=" sanpham row">
-                
-                <div class="col-4"><img style="border-radius: 20px;" width="50px" height="50px" src="../uploads/<?php echo $value['image']?>" alt=""></div>
-                <div class="col-5"><?php echo $value['name_sp']?></div>
-                <div class="col-3"><?php echo $value['gia']?></div> 
-                       
-            </div>
-            <?php endforeach;?>
-        </div>
-    </div>
-
-            </div>
-          
-          </div>
-        </div>
-            
-    </div>
+</table>
+<div class="row">
+  <div class="col-9"></div>
+  <div class="col-3"><button type="submit" class="btn btn-primary" data-mdb-ripple-init>Mua</button></div>
 </div>
 
-
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+</div>

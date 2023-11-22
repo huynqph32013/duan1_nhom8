@@ -212,7 +212,7 @@ if(!isset($_SESSION['myhd'])) $_SESSION['myhd']=[];
             }
             // COm Bo
             case 'combo':{
-              
+              $cb = get_allcombo();  
               include 'config/allcombo.php';
               break;
             }
@@ -238,10 +238,12 @@ if(!isset($_SESSION['myhd'])) $_SESSION['myhd']=[];
 
             // combo
             case 'chitietcombo':{
-              if(isset($_GET['idcombo'])&&$_GET['idcombo']>0){
-                $combo = chitiet_combo($_GET['idcombo']);
-                $onecb = getone_combo($_GET['idcombo']);
-              }
+              if(isset($_GET['idcombo'])&&($_GET['idcombo'])){
+                $dscombodetails = getone_combodetail($_GET['idcombo']);
+                $spdt = getone_combo_id($_GET['idcombo']);
+            }
+
+        
               
               include './config/chitietcombo.php';
               break;

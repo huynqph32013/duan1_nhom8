@@ -79,4 +79,10 @@ function del_details($idsp){
     $sql = "delete from combo where id_sp = $idsp";
     pdo_execute($sql);   
 }
+
+function get_allcombo(){
+    $sql = "select * from combo_detail";
+    $result = pdo_query($sql);
+    return $result;
+  }
 ?>

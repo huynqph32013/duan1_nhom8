@@ -13,7 +13,7 @@
   <img src="../uploads/<?php echo $value['image']?>" height="200px" class="card-img-top" alt=""/>
   <div class="card-body">
     <h5 class="card-title"><?php echo $value['name_sp']?></h5>
-    <p class="card-text"><?php echo $value['gia']?></p>
+    <p class="card-text"><?php echo number_format($value['gia'])?> VND</p>
     <p class="card-text"><?php echo $value['mo_ta']?></p>
 
 

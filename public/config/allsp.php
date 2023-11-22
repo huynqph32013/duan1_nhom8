@@ -55,7 +55,7 @@
                       <div style="margin-top: 50px;" class="row">
                       <div class="col-6"></div>
                     <div class="col-4">
-                    <button type="submmit" name="btnsearch" class="btn btn-primary">Button</button>
+                    <button type="submmit" name="btnsearch" class="btn btn-primary">Lọc</button>
                     </div>
                 
                       </div>

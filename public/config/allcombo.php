@@ -2,7 +2,7 @@
     <div class="maindm">
       
         <div class="row sp">
-        <a style="text-decoration: underline;" href="?act=combo">< Back</a>
+        <a style="text-decoration: underline;" href="?act=home">< Back</a>
 
 
 
@@ -47,20 +47,20 @@
 <div class="col-1"></div>
           <div class="col-8">
             <div class="row product">
-                <?php if(isset($dscm)&& ($dscm)){?>
-              <?php foreach($dscm as $value):?>
+                <?php if(isset($cb)&& ($cb)){?>
+              <?php foreach($cb as $value):?>
                
               <div class="col-6">
               <div class="card">
   <img src="../uploads/<?php echo $value['imgcombo']?>" height="200px" class="card-img-top" alt=""/>
   <div class="card-body">
-    <h5 class="card-title"><a href="?act=chitietsp&idsp=<?php echo $value['id_combo']?>"><?php echo $value['ten_combo']?></a></h5>
+    <h5 class="card-title"><a href="?act=chitietsp&idsp=<?php echo $value['id_combo_details']?>"><?php echo $value['ten_combo']?></a></h5>
     <p><?php $value['mo_ta']?></p> 
     <p class="card-text"><strong>Giảm Giá</strong> : <?php echo $value['discout']?> %</p>
    
 
  <div style="text-align: center;" class="row">
- <div class="col-6"><a href="?act=chitietcombo&idcombo=<?php echo $value['id_combo']?>" class="btn btn-primary" >Xem</a></div>
+ <div class="col-6"><a href="?act=chitietcombo&idcombo=<?php echo $value['id_combo_details']?>" class="btn btn-primary" >Xem</a></div>
       <div class="col-6"><button type="submit" name="submitmua" class="btn btn-primary btn-block mb-4">Mua</button></div>
  </div>
     </div>
