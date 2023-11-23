@@ -29,10 +29,12 @@
                     $i++;
                    } 
                    ?>
-                        <div style="margin-top: 50px;" class="row">
+                        <?php if(isset($_SESSION['myhd'])&&($_SESSION['myhd'])):?>
+                            <div style="margin-top: 50px;" class="row">
                             <div class="col-7"></div>
                             <div class="col-5"><button type="button" class="btn btn-primary" data-mdb-ripple-init>Lưu</button></div>
                         </div>
+                        <?php endif;?>
                     <hr>
                     <div class="row">
                         <div class="col-4"><p>Số Lượng :</p></div>
