@@ -289,6 +289,7 @@ if(!isset($_SESSION['myhd'])) $_SESSION['myhd']=[];
             case 'nhanhang':{
               if(isset($_GET['iddh']) && ($_GET['iddh'])){
                 nhanhang($_GET['iddh']);
+                header('location: ?act=donhang');
               }
             }
 
