@@ -7,6 +7,7 @@
 
 
           <div class="col-3">
+        gi    
 
           <div class="row">
                   <h4 style="text-align: center;">Danh Mục</h4>
