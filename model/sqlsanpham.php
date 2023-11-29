@@ -81,4 +81,38 @@ function all_spham_giamgia(){
     return $result;
 }
 
+function price($giatien){
+    switch($giatien){
+        case 1:{
+            $sql = "select * from sanpham where gia between 0 and 100000";
+            
+            break;
+        }
+        case 2:{
+            $sql = "select * from sanpham where gia between 100000 and 200000";
+            
+            break;
+        }
+        case 3:{
+            $sql = "select * from sanpham where gia between 200000 and 500000";
+            
+            break;
+        }
+        case 4:{
+            $sql = "select * from sanpham where gia between 500000 and 1000000";
+           
+            break;
+        }
+        case 5:{
+            $sql = "select * from sanpham where gia > 1000000";
+            
+            break;
+        }
+        default:{
+            $sql = "select * from sanpham";
+        }      
+    }
+    return pdo_query($sql);
+}
+
 ?>

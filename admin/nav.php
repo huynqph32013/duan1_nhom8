@@ -16,7 +16,7 @@
             <a href="?act=dskh">Khách Hàng</a>
         </div>
         <div class="menunav">
-            <a href="">Thống Kê</a>
+            <a href="?act=thongke">Thống Kê</a>
         </div>
         <div class="menunav">
             <a href="?act=combo">Combo</a>

@@ -8,6 +8,7 @@ include '../model/sqlkhachhang.php';
 include '../model/sqlsanpham.php';
 include '../model/cart.php';
 include '../model/combo.php';
+
 if(!isset($_SESSION['myhd'])) $_SESSION['myhd']=[];
 ?>
 
@@ -96,8 +97,14 @@ if(!isset($_SESSION['myhd'])) $_SESSION['myhd']=[];
             }
             case 'showdm':{
               if(isset($_GET['iddm']) && $_GET['iddm']>0){
+                $iddm = $_GET['iddm'];
                 $danhmuc = danhsach_sptheodm($_GET['iddm']);
               }
+              if(isset($_POST['btnsub'])){
+                $giatien = $_POST['giatien'];
+                $locgia =  price($giatien);
+
+            }
               include 'config/hthidm.php';
               break;
             

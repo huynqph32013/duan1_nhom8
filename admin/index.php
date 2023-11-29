@@ -8,6 +8,7 @@ ob_start();
  include '../model/sqlbinhluan.php';
  include '../model/cart.php';
  include '../model/combo.php';
+ include '../model/thongke.php';
  if(!isset($_SESSION['combo'])) $_SESSION['combo']=[];
 
 ?>
@@ -320,6 +321,11 @@ ob_start();
                         thaydoi_trangthai($ttgh,$idbill);
                         header('location: ?act=ctdh');
                     }
+                    break;
+                }
+                case 'thongke':{
+                    $tk = tk_danhmuc();
+                    include 'thongke/thongke.php';
                     break;
                 }
 
