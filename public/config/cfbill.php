@@ -130,7 +130,7 @@
 </table>
 
 </div>
-         <div class="row">
+         <div style="margin-top: 50px;margin-bottom: 50px" class="row">
             <div class="col-9"></div>
             <div class="col-3">
                 <a href="?act=allsp"> << Trở về</a>

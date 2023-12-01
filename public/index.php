@@ -10,6 +10,7 @@ include '../model/cart.php';
 include '../model/combo.php';
 
 if(!isset($_SESSION['myhd'])) $_SESSION['myhd']=[];
+if(!isset($_SESSION['comb'])) $_SESSION['comb']=[];
 ?>
 
 
@@ -87,10 +88,21 @@ if(!isset($_SESSION['myhd'])) $_SESSION['myhd']=[];
               include 'login/login.php';
               break;
             }
+
+
             case 'dangky':{
+              if(isset($_POST['submitdangky'])){
+                $hoten = $_POST['hoten'];
+                $user = $_POST['user'];
+                $pass = $_POST['pass'];
+                dangky($hoten,$user,$pass);
+                header('location: ?act=login');
+              }
               include 'login/dangki.php';
               break;
             }
+
+
             case 'home':{
               include 'trangchu/home.php';
               break;
@@ -298,6 +310,34 @@ if(!isset($_SESSION['myhd'])) $_SESSION['myhd']=[];
                 nhanhang($_GET['iddh']);
                 header('location: ?act=donhang');
               }
+              break;
+             }
+
+            case 'addcombo':{
+              if(isset($_POST['muacombo'])){
+                $id = $_POST['idcombo'];
+                $ten = $_POST['namecombo'];
+                $giamgia = $_POST['ggcombo'];
+                $img = $_POST['imgcombo'];
+                $mota = $_POST['notecombo'];
+                $gia = $_POST['gia'];
+              }
+              $combo = [$id,$ten,$giamgia,$img,$mota,$gia];
+              array_push($_SESSION['comb'],$combo);
+              header('location: ?act=combo');
+              include 'config/addcombo.php';
+              break;
+            }
+
+            case 'delcombo':{
+              if(isset($_GET['idcombo'])){
+                $id = $_GET['idcombo'];
+                array_splice($_SESSION['comb'],$_GET['idcombo'],1);
+              } else {
+                $_SESSION['comb']=[];
+              }
+              header('location: ?act=allsp');
+              break;
             }
 
 

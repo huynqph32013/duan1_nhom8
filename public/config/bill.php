@@ -68,6 +68,15 @@
                      
                 }
                 ?>
+
+
+
+                <!-- 
+
+                 -->
+                 
+
+
                 <hr>
                 <div class="row">
                     <div class="col-4"><p>Số Lượng :</p></div>
@@ -81,6 +90,49 @@
                <?php
             }
             ?>
+            <?php 
+            
+            if(isset($_SESSION['comb'])){
+                $i = 0;
+                $ttien = 0;
+                $sl = 0;
+                foreach($_SESSION['comb'] as $cart){
+                    
+                    $hinh = '../uploads/'.$cart[3];
+ 
+            ?>
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                        <div>
+                          <img
+                            src="<?php echo $hinh?>"
+                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                        </div>
+                        <div class="ms-3">
+                          <h5><?php echo $cart[1]?></h5>
+                          <p class="small mb-0">256GB, Navy Blue</p>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center">
+                        <div style="width: 50px;">
+                          <h5 class="fw-normal mb-0"><?php echo $cart[4]?></h5>
+                        </div>
+                        <div style="width: 80px;">
+                          <h5 class="mb-0"><?php echo number_format($cart[3])?> VND</h5>
+                        </div>
+                        <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div><?php
+                     $ttien += $cart[3]*$cart[4];
+                     $sl += $sl + $cart[4];
+                     $i++;
+                     
+                }
+              }?>
 
 
 

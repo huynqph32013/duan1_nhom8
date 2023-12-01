@@ -1,13 +1,14 @@
 <div class="wrapperlogin">
     <div class="hihi"> </div>
     <div class="mainlogin">
-    <form>
+
   <!-- 2 column grid layout with text inputs for the first and last names -->
   <div class="row mb-4">
   <h1 style="text-align: center;color: #FFB30E">Đăng Ký</h1>
+  <form action="?act=dangky" method="post">
     <div class="col">
       <div class="form-outline">
-        <input type="text" id="form3Example1" class="form-control" />
+        <input type="text" id="form3Example1" name="hoten" class="form-control" />
         <label class="form-label" for="form3Example1">Họ Tên</label>
       </div>
     </div>
@@ -16,13 +17,13 @@
 
   <!-- Email input -->
   <div class="form-outline mb-4">
-    <input type="text" id="form3Example3" class="form-control" />
-    <label class="form-label" for="form3Example3">Email</label>
+    <input type="text" id="form3Example3" name="user" class="form-control" />
+    <label class="form-label" for="form3Example3">Tài Khoản</label>
   </div>
 
   <!-- Password input -->
   <div class="form-outline mb-4">
-    <input type="password" id="form3Example4" class="form-control" />
+    <input type="password" name="pass" id="form3Example4" class="form-control" />
     <label class="form-label" for="form3Example4">Mật Khẩu</label>
   </div>
 
@@ -35,8 +36,8 @@
   </div>
 
   <!-- Submit button -->
-  <button type="submit" class="btn btn-primary btn-block mb-4">Đăng Ký</button>
-
+  <button type="submit" name="submitdangky" class="btn btn-primary btn-block mb-4">Đăng Ký</button>
+  </form>
   <!-- Register buttons -->
   <div class="text-center">
     <p>hoặc đăng ký bằng:</p>
@@ -56,6 +57,6 @@
       <i class="fab fa-github"></i>
     </button>
   </div>
-</form>
+
     </div>
 </div>

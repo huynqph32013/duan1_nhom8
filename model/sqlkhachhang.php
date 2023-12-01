@@ -54,4 +54,9 @@
             default: echo "User";break;
         }
     }
+
+    function dangky($hoten,$user,$pass){
+        $sql = "insert into `khachang`( `username`, `password`, `email`) values ('$user','$pass','$hoten')";
+        pdo_execute($sql);
+    }
 ?>

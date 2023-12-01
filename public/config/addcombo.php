@@ -1,35 +1,36 @@
-<div style="border: 1px solid #FFB30E;margin-top:50px;text-align:center;border-radius:20px;" class="mainshopingcart">
-<h3>Giỏ Hàng</h3>
+<?php if(isset($_SESSION['comb'])&& ($_SESSION['comb'])){?>
+    
+<h3>combo</h3>
 <?php 
-                   if(isset($_SESSION['myhd'])){
+                   if(isset($_SESSION['comb'])){
                     $i = 0;
                     $ttien = 0;
-                    $sl = 0;
-                    foreach($_SESSION['myhd'] as $cart){
+                    $sl = 1;
+                    foreach($_SESSION['comb'] as $cart){
                        
-                    $hinh = '../uploads/'.$cart[2];
+                    $hinh = '../uploads/'.$cart[3];
               
                     ?>
                     <div style="text-align: center;margin-top:50px;" class="row">
                         <div class="col-3"><img width="50px" src="<?php echo $hinh?>" alt="hehe"></div>
                         <div class="col-5"><p style="line-height: 50px;"><?php echo $cart[1]?></p></div>
-                        <div class="col-4"><p style="line-height: 50px;"><?php echo number_format($cart[3])?> VND</p></div>
+                        <div class="col-4"><p style="line-height: 50px;"><?php echo $cart[5]?> %</p></div>
                     </div>
                     <div style="margin-top:10px" class="row">
-                        <div class="col-4"> Số Lượng </div>
+                        <div class="col-4"> Số Lượng  </div>
                         <div class="col-5">
-                            <button class="btnupd" onclick="giam(this)"> - </button><span id="sluongg"><?php echo $cart[4]?></span><button class="btnupd" onclick="tang(this)"> + </button>
+                            <button class="btnupd" onclick="giam(this)"> - </button><span id="sluongg"><?php echo $sl?></span><button class="btnupd" onclick="tang(this)"> + </button>
                         </div>
-                        <div class="col-3"><a href="?act=delhd&idhd=<?php echo $i?>">Xóa</a></div>
+                        <div class="col-3"><a href="?act=delcombo&idhd=<?php echo $i?>">Xóa</a></div>
                     </div>
                   
                     <?php
-                    $ttien += $cart[3]*$cart[4];
-                    $sl +=  $cart[4];
+                   
+                
                     $i++;
                    } 
                    ?>
-                        <?php if(isset($_SESSION['myhd'])&&($_SESSION['myhd'])):?>
+                        <?php if(isset($_SESSION['comb'])&&($_SESSION['comb'])):?>
                             <div style="margin-top: 50px;" class="row">
                             <div class="col-7"></div>
                             <div class="col-5"><button type="button" class="btn btn-primary" data-mdb-ripple-init>Lưu</button></div>
@@ -41,20 +42,13 @@
                         <div class="col-2"><p><?php echo $sl?></p></div>
                         <div class="col-6"><p>Tổng Tiền :</p> <?php echo number_format($ttien)?> VND</div>
                     </div>
-                    <hr>
-                    <?php if(isset($_SESSION['comb']))
-include 'addcombo.php';
-?>
-                   <div class="row"><button type="submit" id="submitmuahang" name="subdathang" class="btn btn-primary"><a href="?act=bill">Mua Ngay</a></button></div>
+                            
 
                    <?php
                 
                 }
 ?>
 
-
-
-</div>
 <script>
    function tang(x){
     var cha = x.parentElement;
@@ -82,3 +76,4 @@ include 'addcombo.php';
     updategia();
    }
 </script>
+    <?php } ?>

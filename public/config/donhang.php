@@ -2,7 +2,8 @@
 <div class="container">
     <div class="hgish"></div>
     <div style="margin-top: 100px;" class="row">
-    <table class="table">
+        <?php if(isset($lsmuahang) && ($lsmuahang)){?>
+          <table class="table">
   <thead>
     <tr>
       <th scope="col">id</th>
@@ -51,5 +52,9 @@
    
   </tbody>
 </table>
+<?php } else { ?>
+  <h2 style="text-align:center">Chưa có đơn hàng nào</h2>
+  <a href="?act=home"><< trở về trang chủ</a>
+  <?php }?>
     </div>
 </div>

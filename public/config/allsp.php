@@ -22,35 +22,22 @@
                <form action="?act=timkiemsp" method="post">
                     <div style="margin-top: 20px;" class="boxinput">
                     <div class="form-outline">
-                    <input type="text" id="form12" name="namesp" class="form-control" />
                     <label class="form-label" for="form12">Tên Sản Phẩm</label>
+                    <input type="text" id="form12" name="namesp" class="form-control" placeholder="Tìm Sản Phẩm"/>
+                    
                     </div>
                     </div>
                     <!--  -->
              
 
                   <!-- Checked checkbox -->
-                  <div style="margin-top: 20px ;text-align:center" class="form-check">
-                  <label class="form-check-label" for="flexCheckChecked">Các Sản Phẩm Giảm Giá</label>
-                  <input class="form-check-input" type="checkbox" name="giamgiacb" value="" id="flexCheckChecked" checked/>
-                  </div>
+
                     <!--  -->
 
 
 
                     <!--  -->
-                    <div class="row">
-                     <div class="col-12">
-                    <select class="form-select form-select-sm" name="giatien" aria-label="Small select example">
-                    <option value="0" selected>Chọn Giá</option>
-                    <option value="1">0 VND - 100.000 VND</option>
-                    <option value="2">100.000 VND - 200.000 VND</option>
-                    <option value="3">200.000 VND - 500.000VND</option>
-                    <option value="4">500.000VND - 1.000.000VND</option>
-                    <option value="5"> > 1.000.000 NVD</option>
-                    </select>
-                    </div>
-                    </div>
+
                     <!--  -->
                       <div style="margin-top: 50px;" class="row">
                       <div class="col-6"></div>
@@ -65,6 +52,7 @@
                    <?php 
                         include 'addhoadon.php';
                    ?>
+
                </div>
           </div>
           
