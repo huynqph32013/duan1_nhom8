@@ -220,11 +220,12 @@ if (!isset($_SESSION['comb'])) $_SESSION['comb'] = [];
               }
               foreach ($_SESSION['comb'] as $comb) {
 
-                add_cartcombo($_SESSION['checkus']['id_kh'], $comb[3], $comb[1], $comb[5], $comb[6], $comb[0], $id);
+                add_cartcombo($_SESSION['checkus']['id_kh'], $comb[3], $comb[1], $comb[5], $comb[6], $comb[0],$comb[2], $id);
               }
               $_SESSION['comb'] = [];
               $_SESSION['myhd'] = [];
             }
+            $listcombo = list_combo_id($id);
             $listbill = loadone_bill($id);
             $billct = loadone_card($id);
             include 'config/cfbill.php';
@@ -251,6 +252,7 @@ if (!isset($_SESSION['comb'])) $_SESSION['comb'] = [];
             if (isset($_GET['iddh']) && ($_GET['iddh'])) {
               $id = $_GET['iddh'];
             }
+            $listcombo = list_combo_id($id);
             $listbill = loadone_bill($id);
             $billct = loadone_card($id);
             include 'config/chitietdh.php';

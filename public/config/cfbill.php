@@ -82,7 +82,49 @@
    
     <!-- chi tiet sp -->
     
+<?php
+$tong = 0;
+$tongcb = 0;
+$tongsp = 0;
+$sl = count($listcombo)+count($billct);
 
+
+?>
+<?php if(isset($listcombo)&&($listcombo)):?>
+    <div style="margin-top: 50px;" class="row">
+      <h2 style="text-align: center;">Combo</h2>
+      
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Ảnh combo</th>
+      <th scope="col">Tên combo</th>
+      <th scope="col">số lượng</th>
+      <th scope="col">giảm giá</th>
+      <th scope="col">Giá</th>
+    </tr>
+  </thead>
+  <tbody>
+<?php foreach($listcombo as $value):?>
+  <tr>
+      <td><img width="50px" src="../uploads/<?php echo $value['img_combo']?>" alt=""></td>
+      <td><?php echo $value['ten_combo']?></td>
+      <td><?php echo $value['sl_combo']?></td>
+      <td><?php echo $value['dis_combo']?> %</td>
+      <td><p style="text-decoration: line-through;color:red"><?php echo number_format($value['gia_combo']) ?> VND</p>  
+      <p><?php echo number_format($value['gia_combo'] - (( $value['gia_combo']*$value['dis_combo']/100) * $value['sl_combo']))?></p> VND</td>
+    </tr>
+    <?php 
+      $tongcb += $value['gia_combo'] - (( $value['gia_combo']*$value['dis_combo']/100) * $value['sl_combo']);
+      
+    ?>
+<?php endforeach;?>
+  
+  </tbody>
+</table>
+      </div>
+      <?php endif;?>
+    
 
 
  
@@ -101,7 +143,7 @@
     <?php 
     $i = 0;
     $tong = 0;
-    $sl = 0;
+    
     foreach($billct as $value){
         ?>
     <tr>
@@ -112,12 +154,13 @@
     </tr>
         <?php
         $i++;
-        $tong += ($value['sl'] * $value['price']);
-        $sl += $value['sl'];
+        $tongsp += ($value['sl'] * $value['price']);
+       
+        
     }
-   
-    
-    ?>
+
+$tong = $tongcb + $tongsp;
+  ?>
     <tr>
       <td></td>
       <td></td>

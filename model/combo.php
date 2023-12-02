@@ -86,9 +86,14 @@ function get_allcombo(){
     return $result;
   }
   
-function add_cartcombo($idkh, $img, $name, $gia, $sl, $idcombo,$idbill){
-    $sql = "insert into `cart_combo`( `id_kh`, `img_combo`, `ten_combo`, `gia_combo`, `sl_combo`, `id_combo`, `id_bill`) 
-    values ('$idkh','$img','$name','$gia','$sl','$idcombo','$idbill')";
+function add_cartcombo($idkh, $img, $name, $gia, $sl, $idcombo,$giamgia,$idbill){
+    $sql = "insert into `cart_combo`( `id_kh`, `img_combo`, `ten_combo`, `gia_combo`, `sl_combo`, `id_combo`,`dis_combo`,`id_bill`) 
+    values ('$idkh','$img','$name','$gia','$sl','$idcombo','$giamgia','$idbill')";
     pdo_execute($sql);
+}
+
+function list_combo_id($id){
+    $sql = "select * from cart_combo where id_bill = $id";
+    return pdo_query($sql);
 }
 ?>
