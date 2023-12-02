@@ -14,7 +14,7 @@
                     <div style="text-align: center;margin-top:50px;" class="row">
                         <div class="col-3"><img width="50px" src="<?php echo $hinh?>" alt="hehe"></div>
                         <div class="col-5"><p style="line-height: 50px;"><?php echo $cart[1]?></p></div>
-                        <div class="col-4"><p style="line-height: 50px;"><?php echo $cart[5]?> %</p></div>
+                        <div class="col-4"><p style="line-height: 50px;text-decoration:line-through;color:red"><?php echo number_format($cart[5])?> VND</p><?php echo number_format($cart[5]-($cart[5]*$cart[2] / 100))?> VND</p></div>
                     </div>
                     <div style="margin-top:10px" class="row">
                         <div class="col-4"> Số Lượng  </div>
