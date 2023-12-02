@@ -339,6 +339,14 @@ if(!isset($_SESSION['comb'])) $_SESSION['comb']=[];
               header('location: ?act=allsp');
               break;
             }
+            case 'aboutus':{
+              include 'about/aboutus.php';
+              break;
+            }
+            case 'lienhe':{
+              include 'about/lienhe.php';
+              break;
+            }
 
 
 
