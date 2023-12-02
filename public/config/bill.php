@@ -105,59 +105,55 @@
                               <h5 class="fw-normal mb-0"><?php echo $cart[6] ?></h5>
                             </div>
                             <div style="width: 80px;">
-                              <h5 class="mb-0"><?php echo number_format($cart[5] - ($cart[5]*$cart[2]/100)) ?> VND</h5>
+                              <h5 class="mb-0"><?php echo number_format($cart[5] - ($cart[5] * $cart[2] / 100)) ?> VND</h5>
                             </div>
                             <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                           </div>
                         </div>
                       </div>
                     </div><?php
-                          
+
                         }
                       } ?>
 
 
-                  <hr>
-                  <?php 
-                  $soluong = count($_SESSION['myhd']) + count($_SESSION['comb']);
-                  $tcb = 0;
-                  $tsp = 0;
-                  $tong = 0;
-                  if(isset($_SESSION['myhd'])&&($_SESSION['myhd'])){
-                    if(isset($_SESSION['comb'])&&($_SESSION['comb'])){
-                    foreach($_SESSION['myhd'] as $sanpham){
-                      $tsp += ($sanpham[3]*$sanpham[4]);
+                <hr>
+                <?php
+                $soluong = count($_SESSION['myhd']) + count($_SESSION['comb']);
+                $tcb = 0;
+                $tsp = 0;
+                $tong = 0;
+                
+
+
+                    foreach ($_SESSION['myhd'] as $sanpham) {
+                      $tsp += ($sanpham[3] * $sanpham[4]);
                       
                     }
-                    foreach($_SESSION['comb'] as $combo){
-                      $tcb += ($combo[5] - ($combo[5]*$combo[2]/100)) * $combo[6];
-                    
-                    
+                    foreach ($_SESSION['comb'] as $combo) {
+                      $tcb += $combo[5] - ($combo[5] * $combo[2] / 100) * $combo[6];
+                      
                     }
-                    $tong += $tsp + $tcb;
-                   
                     
-                  }
+                 
+                $tong += $tsp + $tcb;
+               
 
-                  
-                    
-                  }
-                  
-                  
-                  ?>
-                  <div class="row">
-                    <div class="col-4">
-                      <p>Số Lượng :</p>
-                    </div>
-                    <div class="col-1">
-                      <p><?php echo $soluong ?></p>
-                    </div>
-                    <div class="col-2"></div>
-                    <div class="col-5">
-                      <p>Tổng Tiền :</p> <?php echo number_format($tong) ?> VND
-                    </div>
 
+                ?>
+                <div class="row">
+                  <div class="col-4">
+                    <p>Số Lượng :</p>
                   </div>
+                  <div class="col-1">
+                    <p><?php echo $soluong ?></p>
+                  </div>
+                  <div class="col-2"></div>
+                  <div class="col-5">
+                    <p>Tổng Tiền :</p> <?php echo number_format($tong) ?> VND
+                  </div>
+
+                </div>
 
               </div>
               <div class="col-lg-5">

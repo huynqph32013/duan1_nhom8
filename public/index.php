@@ -218,6 +218,11 @@ if (!isset($_SESSION['comb'])) $_SESSION['comb'] = [];
               foreach ($_SESSION['myhd'] as $cart) {
                 add_cart($_SESSION['checkus']['id_kh'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $id);
               }
+              foreach ($_SESSION['comb'] as $comb) {
+
+                add_cartcombo($_SESSION['checkus']['id_kh'], $comb[3], $comb[1], $comb[5], $comb[6], $comb[0], $id);
+              }
+              $_SESSION['comb'] = [];
               $_SESSION['myhd'] = [];
             }
             $listbill = loadone_bill($id);
@@ -357,7 +362,7 @@ if (!isset($_SESSION['comb'])) $_SESSION['comb'] = [];
             break;
           }
 
-          
+
 
 
 

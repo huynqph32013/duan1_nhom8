@@ -86,4 +86,9 @@ function get_allcombo(){
     return $result;
   }
   
+function add_cartcombo($idkh, $img, $name, $gia, $sl, $idcombo,$idbill){
+    $sql = "insert into `cart_combo`( `id_kh`, `img_combo`, `ten_combo`, `gia_combo`, `sl_combo`, `id_combo`, `id_bill`) 
+    values ('$idkh','$img','$name','$gia','$sl','$idcombo','$idbill')";
+    pdo_execute($sql);
+}
 ?>
