@@ -4,84 +4,41 @@
     <div class="mainspp">
     <h4><a href="?act=addsp">Thêm Sản Phẩm</a></h4>
     </div><br>
-    <div class="mainsp">
-        
-        <div class="idspdssp">
-        <h3>ID Sp</h3>
-        </div>
-        <div class="tenspdssp">
-        <h3>Tên Sản Phẩm</h3>
-        </div>
-        <div class="giadssp">
-        <h3>Giá</h3>
-        </div>
-        <div class="giamgiadssp">
-        <h3>Giảm Giá</h3>
-        </div>
-        <div class="anhspdssp">
-        <h3>Image</h3>
-        </div>
-        <div class="datedssp">
-        <h3>Ngày Đăng</h3>
-        </div>
 
-        <div class="dacbietdsdm">
-        <h3>Đặc Biệt</h3>
-        </div>
-        <div class="viewdssp">
-        <h3>View</h3>
-        </div>
-        <div class="motadssp">
-        <h3>Mô Tả</h3>
-        </div>
-        <div class="sizedssp">
-        <h3>Size</h3>
-        </div>
-        <div class="action">
-        <h3>Action</h3>
-        </div>
 
-</div>
-
-<?php foreach($dssp as $value):?>
-    <div class="mainspp">
-        <div class="idspdsspp">
-        <p><?php echo $value['id_sp']?></p>
-        </div>
-        <div class="tenspdsspp">
-        <p><?php echo $value['name_sp']?></p>
-        </div>
-        <div class="giadsspp">
-        <p><?php echo number_format($value['gia'])." VND"?></p>
-        </div>
-        <div class="giamgiadsspp">
-        <p><?php echo $value['giam_gia']?></p>
-        </div>
-        <div class="anhspdsspp">
-        <?php if($value['image']!= "" && $value['image']!=null):?>
-                <img width='70px' src="<?php echo '../uploads/'.$value['image']?>" alt="">
-                <?php endif; ?>
-        </div>
-        <div class="datedsspp">
-        <p><?php echo $value['date']?></p>
-        </div>
-
-        <div class="dacbietdsdmp">
-        <p><?php echo $value['dacbiet']?></p>
-        </div>
-        <div class="viewdsspp">
-        <p><?php echo $value['luot_xem']?></p>
-        </div>
-        <div class="motadsspp">
-        <p><?php echo $value['mo_ta']?></p>
-        </div>
-        <div class="sizedsspp">
-        <p><?php echo $value['size']?></p>
-        </div>
-        <div class="actionp">
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Tên sản phẩm</th>
+      <th scope="col">giá</th>
+      <th scope="col">giảm giá</th>
+      <th scope="col">ảnh</th>
+      <th scope="col">ngày đăng</th>
+      <th scope="col">view</th>
+      <th scope="col">mô tả</th>
+      <th scope="col">actione</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach($dssp as $value):?>
+    <tr>
+      <th scope="row"><?php echo $value['id_sp']?></th>
+      <td><?php echo $value['name_sp']?></td>
+      <td><?php echo number_format($value['gia'])." VND"?></td>
+      <td><?php echo $value['giam_gia']?></td>
+      <td><img width='70px' src="<?php echo '../uploads/'.$value['image']?>" alt=""></td>
+      <td><?php echo $value['date']?></td>
+      <td><?php echo $value['luot_xem']?></td>
+      <td><?php echo $value['mo_ta']?></td>
+      <td>
         <a href="?act=delsp&idsp=<?php echo $value['id_sp']?>">Xóa</a>
         <a href="?act=editsp&idsp=<?php echo $value['id_sp']?>">Sửa</a>
-        </div>
-</div>
-<?php endforeach;?>
+      </td>
+      
+    </tr>
+    <?php endforeach;?>
+  </tbody>
+</table>
 </div>

@@ -20,5 +20,11 @@
    $resuft = pdo_query($sql);
    return $resuft;
 }
+function chitiet_binhluan(){
+   $sql = "select binhluan.id_bl , binhluan.noi_dung,binhluan.ngay_cmt ,khachang.fullname,khachang.email,khachang.image, sanpham.name_sp , sanpham.image as anhsp FROM binhluan
+   INNER JOIN khachang on khachang.id_kh = binhluan.id_user
+   INNER JOIN sanpham on sanpham.id_sp = binhluan.id_sp";
+   return pdo_query($sql);
+}
 
 ?>

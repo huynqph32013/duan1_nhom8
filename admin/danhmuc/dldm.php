@@ -10,10 +10,10 @@
         
 
         <div class="iddmdsdm">
-                <h3>ID Danh Mục</h3>
+                <h5>ID Danh Mục</h5>
         </div>
         <div class="tendmdsdm">
-                <h3>Tên Danh Mục</h3>
+                <h5>Tên Danh Mục</h5>
         </div>
         <div class="sttdsdm">
                 

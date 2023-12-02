@@ -1,47 +1,40 @@
-<div id="wrapper">
-    <div class="container1400">
-        <div class="rowcmt">
-        <div class="idbl">
-            <h3>ID Bình Luận</h3>
-        </div>
-        <div class="noidungbl">
-            <h3>Nội Dung</h3>
-        </div>
-        <div class="iduser">
-            <h3>ID Khách Hàng</h3>
-        </div>
-        <div class="idsanpham">
-            <h3>ID Sản Phẩm</h3>
-        </div>
-        <div class="ngaybinhluan">
-            <h3>Ngày Bình Luận</h3>
-        </div>
-    </div>
 
 
-    <?php foreach($dsbl as $value):?>
-        <div class="rowcmtn">
-        <div class="idbln">
-            <p><?php echo $value['id_bl']?></p>
-        </div>
-        <div class="noidungbln">
-            <p><?php echo $value['noi_dung']?></p>
-        </div>
-        <div class="idusern">
-            <p><?php echo $value['id_user']?></p>
-        </div>
-        <div class="idsanphamn">
-            <p><?php echo $value['id_sp']?></p>
-        </div>
-        <div class="ngaybinhluann">
-            <p><?php echo $value['ngay_cmt']?></p>
-        </div>
-        <div class="actiondsbl">
-            <a href="?act=delbl&idbl=<?php echo $value['id_bl']?>">Xóa</a>
-        </div>
-    </div>
-    <hr>
+
+<div style="margin-top: 50px;" class="container">
+    <div class="row">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id Bình Luận</th>
+      <th scope="col">Nội Dung</th>
+      <th scope="col">Khách Hàng</th>
+      <th scope="col">Ảnh Khách Hàng</th>
+      <th scope="col">Sản Phẩm</th>
+      <th scope="col">ảnh sp</th>
+      <th scope="col">Email</th>
+      <th scope="col">Ngày Bình Luận</th>
+      <th scope="col">Act</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach($dsbl as $value):?>
+
+    <tr>
+      <th scope="row"><?php echo $value['id_bl']?></th>
+      <td><?php echo $value['noi_dung']?></td>
+      <td><?php echo $value['fullname']?></td>
+      <td><?php echo $value['email']?></td>
+      <td><img width="50px" src="../uploads/<?php echo $value['image']?>" alt=""></td>
+      <td><?php echo $value['name_sp']?></td>
+      <td><img width="50px" src="../uploads/<?php echo $value['anhsp']?>" alt=""></td>
+      
+      <td><?php echo $value['ngay_cmt']?></td>
+      <td><a href="?act=delbl&idbl=<?php echo $value['id_bl']?>">Xóa</a></td>
+    </tr>
     <?php endforeach;?>
-
+  </tbody>
+</table>
     </div>
 </div>

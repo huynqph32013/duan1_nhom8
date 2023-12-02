@@ -132,7 +132,7 @@ ob_start();
                     break;
                 }
                 case 'dsbl':{
-                    $dsbl = danhsach_binhluan();
+                    $dsbl = chitiet_binhluan();
                     include './binhluan/dsbl.php';
                     break;
                 }
