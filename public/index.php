@@ -364,6 +364,28 @@ if (!isset($_SESSION['comb'])) $_SESSION['comb'] = [];
             break;
           }
 
+          case 'updatetk':{
+            if(isset($_GET['idtk'])&&($_GET['idtk'])){
+              $tkh = getone_khachhang($_GET['idtk']);
+            }
+            if(isset($_POST['submitform'])){
+              $idtk = $_POST['idtk'];
+              $fulname = $_POST['fulname'];
+              $email = $_POST['email'];
+              $img = null;
+              if($_FILES['img']['name'] != ""){
+                $img = time()."_".$_FILES['img']['name'];
+                move_uploaded_file($_FILES['img']['tmp_name'], "../uploads/$img");
+            }
+              $sdt = $_POST['sdt'];
+              $diachi = $_POST['diachi'];
+              capnhat_taikhoan($fulname,$email,$sdt,$diachi,$img,$idtk);
+              header('location: ?act=home');
+            }
+            include 'login/updatetk.php';
+            break;
+          }
+
 
 
 

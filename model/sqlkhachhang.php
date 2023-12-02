@@ -59,4 +59,19 @@
         $sql = "insert into `khachang`( `username`, `password`, `email`) values ('$user','$pass','$hoten')";
         pdo_execute($sql);
     }
+
+    function capnhat_taikhoan($fulname,$email,$sdt,$diachi,$img,$id){
+        $kh = getone_khachhang($id);
+        if($img != null){
+            if($kh['image'] != null && $kh['image'] != ""){
+                $imglink = "../uploads/".$kh['image'];
+                unlink($imglink);
+            }
+        
+        $sql = "update `khachang` set `email`='$email',`sdt`='$sdt',`image`='$img',`address`='$diachi',`fullname`='$fulname' where id_kh = $id ";
+        } else {
+        $sql = "update `khachang` set `email`='$email',`sdt`='$sdt',`address`='$diachi',`fullname`='$fulname' where id_kh = $id ";
+        }
+       pdo_execute($sql); 
+    }
 ?>

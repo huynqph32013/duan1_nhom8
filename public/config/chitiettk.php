@@ -1,7 +1,8 @@
 <div id="wrapper">
     <div class="klsgj"></div>
 <div style="margin-top: 100px;margin-bottom:100px;" class="container">
-    <div class="row">
+<h2 style="text-align:center">Thông Tin Tài Khoản</h2>
+    <div style="margin-top: 100px;" class="row">
         <div class="col-2"></div>
         <div class="col-8">
             
@@ -11,7 +12,7 @@
                 </div>
                 <div class="col-7">
                     
-                <h2 style="text-align:center">Thông Tin Tài Khoản</h2>
+                
                 <div class="row">
                     <div class="col-12">
                     Họ Tên: <h3 style="margin-top:20px"><?php echo $tk['fullname']."       "?><span class="badge bg-secondary"><?php echo checkrole($tk['role'])?></span></h3>
@@ -39,6 +40,12 @@
                         </svg> <strong>Địa Chỉ</strong> : <?php echo $tk['address']?>
                         </div>
                     </div>
+
+                    <div style="margin-top: 50px;" class="row">
+                    <a style="text-decoration:underline" href="?act=updatetk&idtk=<?php echo $tk['id_kh']?>">Update Tài Khoản</a>
+                    </div>
+
+
                 </div>
                 </div>
             </div>
