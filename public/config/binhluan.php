@@ -6,33 +6,90 @@
             $img = './assets/img/imgprofile.jpg';
         }
         ?>
+
+
+
+<form action="?act=binhluan" method="post">
+<input type="hidden" name="idspbl" value="<?php echo $sanpham['id_sp']?>">
+<div style="margin-top: 200px;" class="container">
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
-        <form action="?act=binhluan" method="post">
-            <input type="hidden" name="idspbl" value="<?php echo $sanpham['id_sp']?>">
-        <div class="row">
-
-
-
-    <div class="col-1">
-            <img style="border-radius: 20%;" width="50px" height="50px" src="<?php echo $img?>" alt="Anh Loi">
-    </div>
-
-
-    <div class="col-9">
-                <input style="height: 50px;" type="text" name="inputbinhluan" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="col-2">
-                <button style="height: 50px;" type="submit" name="btnbinhluan" class="btn btn-warning">Gửi</button>
-    </div>
-
     
-    </div>
-    </form>
+    
+<div class="card">
+               
+              <div class="row">
+                  
+                  <div class="col-2">
+                      
+                      
+                      <img src="<?php echo $img?>" width="70" class="rounded-circle mt-2">
+                  
+                  
+                  </div>
+                  
+                  <div class="col-10">
+                      
+                      <div class="comment-box ml-2">
+                          
+                          <h4>Bình Luận</h4>
+                          
 
-</div>
+                          
+                          <div class="comment-area">
+                              
+                              <textarea class="form-control" name="inputbinhluan" placeholder="Bạn thấy sao về sản phẩm này?" rows="4"></textarea>
+                          
+                          </div>
+                          
+                          <div class="comment-btns mt-2">
+                              
+                              <div class="row">
+                                  
+                                  <div class="col-6">
+                                      
+                                      <div class="pull-left">
+                                      
+                                         
+                                          
+                                      </div>
+                                  
+                                  </div>
+                                  
+                                  <div class="col-6">
+                                      
+                                      <div style="text-align: right;" class="pull-right">
+                                      
+                                      <button name="btnbinhluan" class="btn btn-success send btn-sm">Gửi <i class="fa fa-long-arrow-right ml-1"></i></button>      
+                                          
+                                      </div>
+                                  
+                                  </div>
+                              
+                              </div>
+                          
+                          </div>
+                      
+                      
+                      </div>
+                  
+                  </div>
+              
+              
+              </div>
+    
+          </div>
 
 
-    <div class="col-1"></div>
-</div>
+
+          </div>
+          <div class="col-1"></div>
+          </div>
+          </div>
+          
+
+          </div>
+          </form>
+
+
