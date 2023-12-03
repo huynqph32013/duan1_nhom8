@@ -21,32 +21,10 @@
             </div>
             </form>
 
-            <form action="?act=locgia" method="post">
-              <input type="hidden" name="iddm" value="<?php echo $dm['id_dm']?>">
-              <div class="row">
-                <div class="col-12">
-                  <select class="form-select form-select-sm" name="giatien" aria-label="Small select example">
-                    <option value="0" selected>Chọn Giá</option>
-                    <option value="1">0 VND - 100.000 VND</option>
-                    <option value="2">100.000 VND - 200.000 VND</option>
-                    <option value="3">200.000 VND - 500.000VND</option>
-                    <option value="4">500.000VND - 1.000.000VND</option>
-                    <option value="5"> > 1.000.000 NVD</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-8"></div>
-                <div class="col-4">
-                  <button type="submit" name="btnsub" class="btn btn-warning">Lọc</button>
-                </div>
-              </div>
-            </form>
-
-
+           
             <div class="row">
               <?php
-              include 'addhoadon.php';
+              include './config/addcombo.php';
               ?>
             </div>
 

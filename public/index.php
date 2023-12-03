@@ -111,10 +111,7 @@ if (!isset($_SESSION['comb'])) $_SESSION['comb'] = [];
             if (isset($_GET['iddm']) && $_GET['iddm'] > 0) {
               $iddm = $_GET['iddm'];
               $danhmuc = danhsach_sptheodm($_GET['iddm']);
-            }
-            if (isset($_POST['btnsub'])) {
-              $giatien = $_POST['giatien'];
-              $locgia =  price($giatien);
+              $dm = getone_danhmuc($_GET['iddm']);
             }
             include 'config/hthidm.php';
             break;
@@ -334,9 +331,9 @@ if (!isset($_SESSION['comb'])) $_SESSION['comb'] = [];
               if (isset($_SESSION['comb']) && count($_SESSION['comb']) > 0) {
                 foreach ($_SESSION['comb'] as $value) {
                   if ($value[0] == $id) {
-                    $sol += $value[5];
+                    $sol += $value[6];
                     $checknum = 1;
-                    $_SESSION['comb'][$number][5] = $sol;
+                    $_SESSION['comb'][$number][6] = $sol;
                     break;
                   }
                   $number++;
@@ -383,6 +380,18 @@ if (!isset($_SESSION['comb'])) $_SESSION['comb'] = [];
               header('location: ?act=home');
             }
             include 'login/updatetk.php';
+            break;
+          }
+
+
+          case 'locgia':{
+
+            if (isset($_POST['btnsub'])) {
+              $iddm = $_POST['iddm'];
+              $giatien = $_POST['giatien'];
+              $locgia =  price($giatien,$iddm);
+          }
+            include './congcu/locgia.php';
             break;
           }
 

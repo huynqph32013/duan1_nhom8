@@ -48,18 +48,20 @@
             <div class="col-4">
                 <p>Số Lượng :</p>
             </div>
-            <div class="col-2">
-                <p><?php echo $sl += count($_SESSION['comb']) ?></p>
-            </div>
+
             <?php 
             $thanhtien = 0;
             $i = 0;
-            $soluong = count($_SESSION['comb']);
+            $soluong = 0;
             foreach($_SESSION['comb'] as $value) {
-                $thanhtien += $_SESSION['comb'][$i][5] - ($_SESSION['comb'][$i][5]*$_SESSION['comb'][$i][2]/100);
+                $thanhtien += ($value[5] - ($value[5]*$value[2]/100) )*$value[6];
+                $soluong += $value[6];
                 $i++;
             }
             ?>
+             <div class="col-2">
+                <p><?php echo $sl + $soluong ?></p>
+            </div>
             <div class="col-6">
                 <p>Tổng Tiền :</p> <?php echo number_format($ttien + $thanhtien) ?> VND
             </div>

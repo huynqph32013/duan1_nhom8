@@ -81,30 +81,30 @@ function all_spham_giamgia(){
     return $result;
 }
 
-function price($giatien){
+function price($giatien,$iddm){
     switch($giatien){
         case 1:{
-            $sql = "select * from sanpham where gia between 0 and 100000";
+            $sql = "select * from sanpham where gia between 0 and 100000 and id_dm = $iddm";
             
             break;
         }
         case 2:{
-            $sql = "select * from sanpham where gia between 100000 and 200000";
+            $sql = "select * from sanpham where gia between 100000 and 200000 and id_dm = $iddm";
             
             break;
         }
         case 3:{
-            $sql = "select * from sanpham where gia between 200000 and 500000";
+            $sql = "select * from sanpham where gia between 200000 and 500000 and id_dm = $iddm";
             
             break;
         }
         case 4:{
-            $sql = "select * from sanpham where gia between 500000 and 1000000";
+            $sql = "select * from sanpham where gia between 500000 and 1000000 and id_dm = $iddm";
            
             break;
         }
         case 5:{
-            $sql = "select * from sanpham where gia > 1000000";
+            $sql = "select * from sanpham where gia > 1000000 and id_dm = $iddm";
             
             break;
         }

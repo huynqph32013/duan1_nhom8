@@ -112,7 +112,7 @@ $sl = count($listcombo)+count($billct);
       <td><?php echo $value['sl_combo']?></td>
       <td><?php echo $value['dis_combo']?> %</td>
       <td><p style="text-decoration: line-through;color:red"><?php echo number_format($value['gia_combo']) ?> VND</p>  
-      <p><?php echo number_format($value['gia_combo'] - (( $value['gia_combo']*$value['dis_combo']/100) * $value['sl_combo']))?></p> VND</td>
+      <p><?php echo number_format($value['gia_combo'] - (( $value['gia_combo']*$value['dis_combo']/100) * $value['sl_combo']))?> VND</p> </td>
     </tr>
     <?php 
       $tongcb += $value['gia_combo'] - (( $value['gia_combo']*$value['dis_combo']/100) * $value['sl_combo']);

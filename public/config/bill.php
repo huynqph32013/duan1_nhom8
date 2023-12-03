@@ -58,7 +58,7 @@
                       </div>
                     </div><?php
                           $ttien += $cart[3] * $cart[4];
-                          $sl += $sl + $cart[4];
+                          $sl += $cart[4];
                           $i++;
                         }
                           ?>
@@ -82,8 +82,9 @@
                 if (isset($_SESSION['comb'])) {
                   $i = 0;
                   $ttien = 0;
-                  $sl = 0;
+                  $slg = 0;
                   foreach ($_SESSION['comb'] as $cart) {
+                    $slg += $cart[6];
 
                     $hinh = '../uploads/' . $cart[3];
 
@@ -105,7 +106,7 @@
                               <h5 class="fw-normal mb-0"><?php echo $cart[6] ?></h5>
                             </div>
                             <div style="width: 80px;">
-                              <h5 class="mb-0"><?php echo number_format($cart[5] - ($cart[5] * $cart[2] / 100)) ?> VND</h5>
+                              <h5 class="mb-0"><?php echo number_format(($cart[5] - ($cart[5] * $cart[2] / 100))*$cart[6]) ?> VND</h5>
                             </div>
                             <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                           </div>
@@ -119,7 +120,7 @@
 
                 <hr>
                 <?php
-                $soluong = count($_SESSION['myhd']) + count($_SESSION['comb']);
+                $soluong = $slg + $sl;
                 $tcb = 0;
                 $tsp = 0;
                 $tong = 0;
@@ -131,7 +132,7 @@
                       
                     }
                     foreach ($_SESSION['comb'] as $combo) {
-                      $tcb += $combo[5] - ($combo[5] * $combo[2] / 100) * $combo[6];
+                      $tcb += ($cart[5] - ($cart[5] * $cart[2] / 100))*$cart[6];
                       
                     }
                     
@@ -164,18 +165,20 @@
                   $email = $_SESSION['checkus']['email'];
                   $diachi = $_SESSION['checkus']['address'];
                   $sdt = $_SESSION['checkus']['sdt'];
+                  $img = '../uploads/'.$_SESSION["checkus"]["image"];
                 } else {
                   $fulname = '';
                   $email = '';
                   $diachi = '';
                   $sdt = '';
+                  $img = '';
                 }
                 ?>
                 <div class="card bg-primary text-white rounded-3">
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                       <h5 class="mb-0">Thanh Toán</h5>
-                      <img src="../uploads/<?php echo $_SESSION['checkus']['image'] ?>" class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
+                      <img src="<?php echo $img?>" class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
                     </div>
 
                     <p class="small mb-2">Card type</p>
@@ -235,13 +238,16 @@
                         <p class="mb-2">Tổng Tiền</p>
                         <p class="mb-2"><?php echo number_format($tong) ?> VND</p>
                       </div>
-
+                      <?php if(isset($_SESSION['checkus'])&&($_SESSION['checkus'])){?>
                       <button type="submit" name="submitmuahang" class="btn btn-info btn-block btn-lg">
                         <div class="d-flex justify-content-between">
                           <span><?php echo number_format($tong) ?> VND</span>
                           <span>Thanh Toán <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
                         </div>
                       </button>
+                      <?php } else {?>
+                          <a href="?act=login">Đăng nhập để mua hàng</a>
+                        <?php } ?>
                     </form>
 
                   </div>
