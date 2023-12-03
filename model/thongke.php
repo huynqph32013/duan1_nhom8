@@ -21,4 +21,12 @@ function top10_view(){
     $sql = "select * from sanpham order by luot_xem desc limit 0,10";
     return pdo_query($sql);
 }
+
+
+
+function bieudo(){
+    $sql = "select danhmuc.ten_dm as 'tendm', count(sanpham.id_sp) as 'sl' from sanpham left join danhmuc on danhmuc.id_dm = sanpham.id_dm group by danhmuc.id_dm order by danhmuc.id_dm DESC;";
+   
+    return  pdo_query($sql);
+}
 ?>

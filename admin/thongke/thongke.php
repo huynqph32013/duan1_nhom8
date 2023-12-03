@@ -1,7 +1,14 @@
 <div class="container">
-    <div class="row">
-        <h2 style="text-align: center;">Thống Kê Danh Muc</h2>
-    <table class="table">
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <h3>Thống Kê Danh Mục</h3>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <table class="table">
   <thead>
     <tr>
       <th scope="col">Stt</th>
@@ -22,14 +29,18 @@
     <?php endforeach;?>
   </tbody>
 </table>
+      </div>
     </div>
-
-
-
-    
-    <div style="margin-top: 100px;" class="row">
-        <h2 style="text-align: center;">10 Sản Phẩm View Cao</h2>
-    <table style="margin-top: 50px;" class="table">
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <h3>10 Sản Phẩm View Cao</h3>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+      <table style="margin-top: 50px;" class="table">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -56,6 +67,28 @@
     </tr>
     <?php endforeach;?>
   </tbody>
-</table>
+</table>    
     </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    
+
+
 </div>

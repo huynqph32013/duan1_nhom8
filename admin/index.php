@@ -34,6 +34,8 @@ ob_start();
                 $act = $_GET['act'];
                 switch($act){
                     case 'home':{
+                        $bieudo =  bieudo();
+                        
                         include '../admin/trangchu/home.php';
                         break;
                     }
@@ -334,10 +336,15 @@ ob_start();
 
 
                 default:{
+                    $bieudo =  bieudo();
                     include './trangchu/home.php';
                     break;
                 }
             }
+        } else {
+            $bieudo =  bieudo();
+            include './trangchu/home.php';
+            
         }
         ?>
         <?php include './main.php';?>
