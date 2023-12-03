@@ -12,4 +12,13 @@ function tk_sanpham_banchay(){
     join cart on cart.idpro = sanpham.id_sp
     order by (count(cart.idpro)*cart.sl) desc limit 0,10";
 }
+
+function top10sp_banchay (){
+    $sql = "select * from cart order by count(idpro) desc ;";
+}
+
+function top10_view(){
+    $sql = "select * from sanpham order by luot_xem desc limit 0,10";
+    return pdo_query($sql);
+}
 ?>

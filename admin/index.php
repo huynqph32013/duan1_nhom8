@@ -325,6 +325,7 @@ ob_start();
                 }
                 case 'thongke':{
                     $tk = tk_danhmuc();
+                    $top10sp_view = top10_view();
                     include 'thongke/thongke.php';
                     break;
                 }

@@ -28,7 +28,7 @@
       <td><?php echo $value['name_sp']?></td>
       <td><?php echo number_format($value['gia'])." VND"?></td>
       <td><?php echo $value['giam_gia']?></td>
-      <td><img width='70px' src="<?php echo '../uploads/'.$value['image']?>" alt=""></td>
+      <td><img width='50px' height="50px" src="<?php echo '../uploads/'.$value['image']?>" alt=""></td>
       <td><?php echo $value['date']?></td>
       <td><?php echo $value['luot_xem']?></td>
       <td><?php echo $value['mo_ta']?></td>

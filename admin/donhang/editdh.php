@@ -26,7 +26,13 @@
       <td><?php echo number_format($onebil['total'])?> VND</td>
       <form action="?act=editdh" method="post">
         <input type="hidden" name="idbill" value="<?php echo $onebil['id_bill']?>">
-      <td><select name="giaohanghh" id="">
+      <td><?php if($listbill['chitietbill']==4){
+        ?>
+        <p>Đã Hủy</p>
+        <?php
+      }else{
+?>
+<select name="giaohanghh" id="">
         <?php for($i=0; $i<4; $i++): ?>            
             <option value="<?= $i?>" <?= ($listbill['chitietbill']==$i)?'selected':''?>>
                 <?php
@@ -44,9 +50,17 @@
                 ?>
             </option>
         <?php endfor ?>
-      </select></td>
+      </select>
       
+
+
+                </td>
       <td><button type="submit" name="submitct" class="btn btn-primary">Button</button></td>
+      <?php  }?>
+      
+
+      
+      
       </form>
     </tr>
     
