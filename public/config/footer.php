@@ -5,16 +5,16 @@
             <h5 class="lh-lg fw-bold text-white">OUR TOP CITIES</h5>
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">San Francisco</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Miami</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">San Diego</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">East Bay</a></li>
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Long Beach</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Hà Nội</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Yên Bái</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">TPHCM</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Hạ Long</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Hải Phòng</a></li>
               </ul>
             </div>
             <div class="col-6 col-md-4 col-lg-auto mb-3">
               <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Los Angeles</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Thái Bình</a></li>
                 <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Washington DC</a></li>
                 <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Seattle</a></li>
                 <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Portland</a></li>
@@ -54,7 +54,7 @@
             <div class="col-6 col-md-4 col-lg-3 col-xxl-2 mb-3">
               <h5 class="lh-lg fw-bold text-white">COMPANY</h5>
               <ul class="list-unstyled mb-md-4 mb-lg-0">
-                <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">About Us</a></li>
+                <li class="lh-lg"><a class="text-200 text-decoration-none" href="?act=aboutus">About Us</a></li>
                 <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Team</a></li>
                 <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">Careers</a></li>
                 <li class="lh-lg"><a class="text-200 text-decoration-none" href="#!">blog</a></li>

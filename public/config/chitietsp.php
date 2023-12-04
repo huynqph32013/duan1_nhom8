@@ -55,7 +55,11 @@
 
 
 
-
+<div class="container">
+  <div class="row">
+    <h3 style="text-align:center;margin-top:50px">Sản Phẩm Liên Quan</h3>
+  </div>
+</div>
 
 
 
