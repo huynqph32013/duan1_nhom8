@@ -1,11 +1,24 @@
 <?php 
 function tongbill(){
-    $tong = 0; 
-    foreach($_SESSION['myhd'] as $cart):
-          $ttien = $cart[3]*$cart[4];
-          $tong += $ttien;
-  endforeach;
-return $tong;
+    
+  $price_sp =0;
+  $price_cb =0;
+
+    if(isset($_SESSION['myhd'])&&($_SESSION['myhd'])){
+      foreach($_SESSION['myhd'] as $cart):
+        $price_sp += $cart[3]*$cart[4];      
+      endforeach;
+    }
+
+    if(isset($_SESSION['comb'])&&($_SESSION['comb'])){
+      foreach($_SESSION['comb'] as $cb):
+        $price_cb += ($cb[5]-($cb[5]*$cb[2]/100))*$cb[6];      
+      endforeach;
+    }
+
+
+
+return $price_cb+$price_sp;
 }
 
 function add_bill($name,$email,$diachi,$sdt,$pttt,$ngaydh,$tongdh,$iduser){

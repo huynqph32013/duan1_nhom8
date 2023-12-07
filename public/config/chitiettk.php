@@ -42,8 +42,18 @@
                     </div>
 
                     <div style="margin-top: 50px;" class="row">
-                    <a style="text-decoration:underline" href="?act=updatetk&idtk=<?php echo $tk['id_kh']?>">Update Tài Khoản</a>
+                    <div class="col-6"> <a style="text-decoration:underline" href="?act=updatetk&idtk=<?php echo $tk['id_kh']?>">Update Tài Khoản</a>
+     </div>
+                    <div class="col-6">               <?php 
+                                      if($role == 1){
+                                        ?>
+                                        <a style="color: red;text-decoration:underline" href="../admin/index.php">Đăng Nhập Vào Trang Admin</a>
+                                        <?php
+                                      } 
+                    ?></div>
+                   
                     </div>
+   
 
 
                 </div>

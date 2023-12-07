@@ -24,18 +24,12 @@
                 <?php
                 if(isset($_SESSION['checkus'])){
                   extract($_SESSION['checkus']);
-                  if($role == 1){
-                    ?>
-                    <a href="../admin/index.php">admin |</a>
-                    <a href="?act=chitiettk&idkh=<?php echo $id_kh?>"><?php echo "$username "."  |"?></a>
-                    <a href="?act=logout">LogOut</a>
-                    <?php
-                  } else {
+
                     ?>
                     <a href="?act=chitiettk&idkh=<?php echo $id_kh?>"><?php echo $username?></a>
                     <a href="?act=logout">LogOut</a>
                     <?php
-                  }
+                  
              
                 } else{
 ?>
