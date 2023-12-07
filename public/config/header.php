@@ -26,8 +26,8 @@
                   extract($_SESSION['checkus']);
 
                     ?>
-                    <a href="?act=chitiettk&idkh=<?php echo $id_kh?>"><?php echo $username?></a>
-                    <a href="?act=logout">LogOut</a>
+                    <a href="?act=chitiettk&idkh=<?php echo $id_kh?>"><?php echo $username ?></a> | 
+                    <a href="?act=logout"> LogOut</a>
                     <?php
                   
              

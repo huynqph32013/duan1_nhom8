@@ -23,7 +23,7 @@
 
             <form action="?act=locgia" method="post">
               <input type="hidden" name="iddm" value="<?php echo $dm['id_dm']?>">
-              <div class="row">
+              <div style="margin-top:50px" class="row">
                 <div class="col-12">
                   <select class="form-select form-select-sm" name="giatien" aria-label="Small select example">
                     <option value="0" selected>Chọn Giá</option>
@@ -37,7 +37,7 @@
               </div>
               <div class="row">
                 <div class="col-8"></div>
-                <div class="col-4">
+                <div style="margin-top: 50px;" class="col-4">
                   <button type="submit" name="btnsub" class="btn btn-warning">Lọc</button>
                 </div>
               </div>

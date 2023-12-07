@@ -30,7 +30,7 @@
 
     <div class="col">
       <!-- Simple link -->
-      <a href="#!">Quên Mật Khẩu?</a>
+      <a href="?act=#">Quên Mật Khẩu?</a>
     </div>
   </div>
 

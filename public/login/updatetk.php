@@ -1,4 +1,4 @@
-<div class="container">
+<div style="margin-top: 100px;margin-bottom: 100px" class="container">
     <div class="row">
     <form class="row g-3 needs-validation" action="?act=updatetk" method="post" enctype="multipart/form-data" novalidate>
         <input type="hidden" name="idtk" value="<?php echo $tkh['id_kh']?>">
@@ -36,7 +36,7 @@
     <div class="col-8"><input type="file" class="form-control" name="img" id="customFile" /></div>
     <div class="col-2"></div>
 </div>
-  <div class="col-12">
+  <div  class="col-12">
     <button class="btn btn-primary" type="submit" name="submitform" data-mdb-ripple-init>Cập Nhật</button>
   </div>
 </form>
