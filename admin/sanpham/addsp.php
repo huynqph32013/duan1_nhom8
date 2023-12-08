@@ -5,9 +5,9 @@
     <a href="?act=dssp"><< back</a>
 <form action="?act=addsp" method="post" enctype="multipart/form-data">
     <div style="margin-top: 50px;" class="row">
-        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="tensp" placeholder="   Tên Sản Phẩm" readonly ></div>
-        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="gia" placeholder="   Giá Sản Phẩm" readonly></div>
-        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="giamgia" placeholder="   Giảm giá" readonly></div>
+        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="tensp" placeholder="   Tên Sản Phẩm"  ></div>
+        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="gia" placeholder="   Giá Sản Phẩm" ></div>
+        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="giamgia" placeholder="   Giảm giá" ></div>
     </div>
     <div style="margin-top: 50px;" class="row">
         <div class="col-6"><input class="form-control" type="file" name="img" id="formFile"></div>

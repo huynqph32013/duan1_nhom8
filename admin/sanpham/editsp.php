@@ -8,12 +8,12 @@
 
 <div class="container">
     <a href="?act=editsp"><< back</a>
-<form action="?act=addsp" method="post" enctype="multipart/form-data">
+<form action="?act=editsp" method="post" enctype="multipart/form-data">
 <input type="hidden" value="<?php echo $sp['id_sp']?>" name="idsp">
     <div style="margin-top: 50px;" class="row">
-        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="tensp" value="<?php echo $sp['name_sp']?>" placeholder="   Tên Sản Phẩm" readonly ></div>
-        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="gia" value="<?php echo $sp['gia']?>" placeholder="   Giá Sản Phẩm" readonly></div>
-        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="giamgia" value="<?php echo $sp['giam_gia']?>" placeholder="   Giảm giá" readonly></div>
+        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="tensp" value="<?php echo $sp['name_sp']?>" placeholder="   Tên Sản Phẩm"  ></div>
+        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="gia" value="<?php echo $sp['gia']?>" placeholder="   Giá Sản Phẩm" ></div>
+        <div class="col-4"><input class="form-control" type="text"  aria-label="readonly input example" name="giamgia" value="<?php echo $sp['giam_gia']?>" placeholder="   Giảm giá" ></div>
     </div>
     <div style="margin-top: 50px;" class="row">
         <div class="col-6">
