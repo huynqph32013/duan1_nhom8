@@ -217,7 +217,7 @@ if (!isset($_SESSION['comb'])) $_SESSION['comb'] = [];
               }
               foreach ($_SESSION['comb'] as $comb) {
 
-                add_cartcombo($_SESSION['checkus']['id_kh'], $comb[3], $comb[1], $comb[5], $comb[6], $comb[0],$comb[2], $id);
+                add_cartcombo($_SESSION['checkus']['id_kh'], $comb[3], $comb[1], $comb[5], $comb[6], $comb[0], $comb[2], $id);
               }
               $_SESSION['comb'] = [];
               $_SESSION['myhd'] = [];
@@ -361,22 +361,22 @@ if (!isset($_SESSION['comb'])) $_SESSION['comb'] = [];
             break;
           }
 
-          case 'updatetk':{
-            if(isset($_GET['idtk'])&&($_GET['idtk'])){
+        case 'updatetk': {
+            if (isset($_GET['idtk']) && ($_GET['idtk'])) {
               $tkh = getone_khachhang($_GET['idtk']);
             }
-            if(isset($_POST['submitform'])){
+            if (isset($_POST['submitform'])) {
               $idtk = $_POST['idtk'];
               $fulname = $_POST['fulname'];
               $email = $_POST['email'];
               $img = null;
-              if($_FILES['img']['name'] != ""){
-                $img = time()."_".$_FILES['img']['name'];
+              if ($_FILES['img']['name'] != "") {
+                $img = time() . "_" . $_FILES['img']['name'];
                 move_uploaded_file($_FILES['img']['tmp_name'], "../uploads/$img");
-            }
+              }
               $sdt = $_POST['sdt'];
               $diachi = $_POST['diachi'];
-              capnhat_taikhoan($fulname,$email,$sdt,$diachi,$img,$idtk);
+              capnhat_taikhoan($fulname, $email, $sdt, $diachi, $img, $idtk);
               header('location: ?act=home');
             }
             include 'login/updatetk.php';
@@ -384,23 +384,23 @@ if (!isset($_SESSION['comb'])) $_SESSION['comb'] = [];
           }
 
 
-          case 'locgia':{
+        case 'locgia': {
 
             if (isset($_POST['btnsub'])) {
               $iddm = $_POST['iddm'];
               $giatien = $_POST['giatien'];
-              $locgia =  price($giatien,$iddm);
-          }
+              $locgia =  price($giatien, $iddm);
+            }
             include './congcu/locgia.php';
             break;
           }
 
 
-       
 
 
 
-      
+
+
 
 
 

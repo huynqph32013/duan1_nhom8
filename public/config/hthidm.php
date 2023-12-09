@@ -22,7 +22,7 @@
             </form>
 
             <form action="?act=locgia" method="post">
-              <input type="hidden" name="iddm" value="<?php echo $dm['id_dm']?>">
+              <input type="hidden" name="iddm" value="<?php echo $dm['id_dm'] ?>">
               <div style="margin-top:50px" class="row">
                 <div class="col-12">
                   <select class="form-select form-select-sm" name="giatien" aria-label="Small select example">

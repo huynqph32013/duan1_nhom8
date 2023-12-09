@@ -37,7 +37,7 @@
                     <div class="col-4"><button type="submit" name="submitmua" class="btn btn-primary">Mua Ngay</button></div>
                     <div class="col-4"></div>
                   </form>
-                  
+
                 </div>
               </div>
             </div>
@@ -65,106 +65,106 @@
 
 <?php if (isset($_SESSION['checkus']) && ($_SESSION['checkus'])) : ?>
 
-<?php include 'binhluan.php'?>
+  <?php include 'binhluan.php' ?>
 
 
 
 
- <?php endif; ?>
+<?php endif; ?>
 
 
 
-          <div style="margin-top: 100px;" class="row">
+<div style="margin-top: 100px;" class="row">
 
-            <div class="container mt-5">
+  <div class="container mt-5">
 
-              <div class="row  d-flex justify-content-center">
+    <div class="row  d-flex justify-content-center">
 
-                <div class="col-md-8">
+      <div class="col-md-8">
 
-                  <div class="headings d-flex justify-content-between align-items-center mb-3">
-                    <h5>Số Bình Luận (<?php echo count($bl) ?>)</h5>
+        <div class="headings d-flex justify-content-between align-items-center mb-3">
+          <h5>Số Bình Luận (<?php echo count($bl) ?>)</h5>
 
-                    <div class="buttons">
+          <div class="buttons">
 
-                      <span class="badge bg-white d-flex flex-row align-items-center">
-                        <span class="text-primary">Comments "ON"</span>
-                        <div class="form-check form-switch">
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+            <span class="badge bg-white d-flex flex-row align-items-center">
+              <span class="text-primary">Comments "ON"</span>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
 
-                        </div>
-                      </span>
-
-                    </div>
-
-                  </div>
-
-
-                  <?php foreach ($bl as $value) : ?>
-                    <div style="margin-top: 20px;" class="card p-3">
-
-                      <div class="d-flex justify-content-between align-items-center">
-
-                        <div class="user d-flex flex-row align-items-center">
-
-                          <img src="../uploads/<?php echo $value['image'] ?>" width="30" class="user-img rounded-circle mr-2">
-                          <span><small class="font-weight-bold text-primary"><?php echo $value['fullname'] ?></small> <small class="font-weight-bold"> : <?php echo $value['noi_dung'] ?></small></span>
-
-                        </div>
-
-
-                        <small>
-                          <p><?php echo $value['ngay_cmt'] ?></p>
-                        </small>
-
-                      </div>
-
-
-                      <div class="action d-flex justify-content-between mt-2 align-items-center">
-
-                        <div class="reply px-4">
-                          <small><?php if (isset($_SESSION['checkus']) && ($_SESSION['checkus'])) {
-                                    if ($_SESSION['checkus']['id_kh'] == $value['id_user']) {
-                                  ?><a href="?act=delbl&idbl=<?php echo $value['id_bl'] ?>">Xóa</a>
-                                <?php
-                                    }
-                                  } else {
-                                ?><?php
-                                  }
-
-                                  ?> </small>
-                          <span class="dots"></span>
-                          <small>Trả Lời</small>
-                          <span class="dots"></span>
-
-
-                        </div>
-
-                        <div class="icons align-items-center">
-
-                          <i class="fa fa-star text-warning"></i>
-                          <i class="fa fa-check-circle-o check-icon"></i>
-
-                        </div>
-
-                      </div>
-                      </div>
-                  
-                            
-      <?php endforeach; ?>
-
-
-                
               </div>
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <?php foreach ($bl as $value) : ?>
+          <div style="margin-top: 20px;" class="card p-3">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+              <div class="user d-flex flex-row align-items-center">
+
+                <img src="../uploads/<?php echo $value['image'] ?>" width="30" class="user-img rounded-circle mr-2">
+                <span><small class="font-weight-bold text-primary"><?php echo $value['fullname'] ?></small> <small class="font-weight-bold"> : <?php echo $value['noi_dung'] ?></small></span>
+
+              </div>
+
+
+              <small>
+                <p><?php echo $value['ngay_cmt'] ?></p>
+              </small>
 
             </div>
 
 
+            <div class="action d-flex justify-content-between mt-2 align-items-center">
+
+              <div class="reply px-4">
+                <small><?php if (isset($_SESSION['checkus']) && ($_SESSION['checkus'])) {
+                          if ($_SESSION['checkus']['id_kh'] == $value['id_user']) {
+                        ?><a href="?act=delbl&idbl=<?php echo $value['id_bl'] ?>">Xóa</a>
+                      <?php
+                          }
+                        } else {
+                      ?><?php
+                                }
+
+                                  ?> </small>
+                <span class="dots"></span>
+                <small>Trả Lời</small>
+                <span class="dots"></span>
 
 
+              </div>
 
+              <div class="icons align-items-center">
 
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-check-circle-o check-icon"></i>
 
+              </div>
 
+            </div>
           </div>
+
+
+        <?php endforeach; ?>
+
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+  </div>
 </div>

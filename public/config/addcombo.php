@@ -17,13 +17,13 @@
                     <p style="line-height: 50px;"><?php echo $cart[1] ?></p>
                 </div>
                 <div class="col-4">
-                    <p style="line-height: 50px;text-decoration:line-through;color:red"><?php echo number_format($cart[5] * $cart[6]) ?> VND</p><?php echo number_format(($cart[5] - ($cart[5] * $cart[2] / 100))*$cart[6]) ?> VND</p>
+                    <p style="line-height: 50px;text-decoration:line-through;color:red"><?php echo number_format($cart[5] * $cart[6]) ?> VND</p><?php echo number_format(($cart[5] - ($cart[5] * $cart[2] / 100)) * $cart[6]) ?> VND</p>
                 </div>
             </div>
             <div style="margin-top:10px" class="row">
                 <div class="col-4"> Số Lượng </div>
                 <div class="col-5">
-                    <button class="btnupd" onclick="giam(this)"> - </button><span id="sluongg"><?php echo $cart[6]?></span><button class="btnupd" onclick="tang(this)"> + </button>
+                    <button class="btnupd" onclick="giam(this)"> - </button><span id="sluongg"><?php echo $cart[6] ?></span><button class="btnupd" onclick="tang(this)"> + </button>
                 </div>
                 <div class="col-3"><a href="?act=delcombo&idhd=<?php echo $i ?>">Xóa</a></div>
             </div>

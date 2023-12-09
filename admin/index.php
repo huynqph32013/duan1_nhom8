@@ -347,15 +347,15 @@ if (!isset($_SESSION['combo'])) $_SESSION['combo'] = [];
                         include 'thongke/thongke.php';
                         break;
                     }
-                
-                    case 'cctcombo':{
-                        if(isset($_GET['id'])&&($_GET['id'])){
+
+                case 'cctcombo': {
+                        if (isset($_GET['id']) && ($_GET['id'])) {
                             $dscombodetails = getone_combodetail($_GET['id']);
                             $spdt = getone_combo_id($_GET['id']);
                         }
                         include 'donhang/chitiet.php';
                         break;
-                      }
+                    }
 
 
 

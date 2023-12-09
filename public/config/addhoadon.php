@@ -43,23 +43,23 @@
         <?php if (isset($_SESSION['comb']))
             include 'addcombo.php';
         ?>
-                <hr>
+        <hr>
         <div class="row">
             <div class="col-4">
                 <p>Số Lượng :</p>
             </div>
 
-            <?php 
+            <?php
             $thanhtien = 0;
             $i = 0;
             $soluong = 0;
-            foreach($_SESSION['comb'] as $value) {
-                $thanhtien += ($value[5] - ($value[5]*$value[2]/100) )*$value[6];
+            foreach ($_SESSION['comb'] as $value) {
+                $thanhtien += ($value[5] - ($value[5] * $value[2] / 100)) * $value[6];
                 $soluong += $value[6];
                 $i++;
             }
             ?>
-             <div class="col-2">
+            <div class="col-2">
                 <p><?php echo $sl + $soluong ?></p>
             </div>
             <div class="col-6">
@@ -73,7 +73,7 @@
 
     }
     ?>
-    
+
 
 
 

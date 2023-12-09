@@ -106,7 +106,7 @@
                               <h5 class="fw-normal mb-0"><?php echo $cart[6] ?></h5>
                             </div>
                             <div style="width: 80px;">
-                              <h5 class="mb-0"><?php echo number_format(($cart[5] - ($cart[5] * $cart[2] / 100))*$cart[6]) ?> VND</h5>
+                              <h5 class="mb-0"><?php echo number_format(($cart[5] - ($cart[5] * $cart[2] / 100)) * $cart[6]) ?> VND</h5>
                             </div>
                             <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
                           </div>
@@ -124,21 +124,19 @@
                 $tcb = 0;
                 $tsp = 0;
                 $tong = 0;
-                
 
 
-                    foreach ($_SESSION['myhd'] as $sanpham) {
-                      $tsp += ($sanpham[3] * $sanpham[4]);
-                      
-                    }
-                    foreach ($_SESSION['comb'] as $combo) {
-                      $tcb += ($cart[5] - ($cart[5] * $cart[2] / 100))*$cart[6];
-                      
-                    }
-                    
-                 
+
+                foreach ($_SESSION['myhd'] as $sanpham) {
+                  $tsp += ($sanpham[3] * $sanpham[4]);
+                }
+                foreach ($_SESSION['comb'] as $combo) {
+                  $tcb += ($cart[5] - ($cart[5] * $cart[2] / 100)) * $cart[6];
+                }
+
+
                 $tong += $tsp + $tcb;
-               
+
 
 
                 ?>
@@ -165,7 +163,7 @@
                   $email = $_SESSION['checkus']['email'];
                   $diachi = $_SESSION['checkus']['address'];
                   $sdt = $_SESSION['checkus']['sdt'];
-                  $img = '../uploads/'.$_SESSION["checkus"]["image"];
+                  $img = '../uploads/' . $_SESSION["checkus"]["image"];
                 } else {
                   $fulname = '';
                   $email = '';
@@ -178,7 +176,7 @@
                   <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                       <h5 class="mb-0">Thanh Toán</h5>
-                      <img src="<?php echo $img?>" class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
+                      <img src="<?php echo $img ?>" class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
                     </div>
 
                     <p class="small mb-2">Card type</p>
@@ -238,16 +236,16 @@
                         <p class="mb-2">Tổng Tiền</p>
                         <p class="mb-2"><?php echo number_format($tong) ?> VND</p>
                       </div>
-                      <?php if(isset($_SESSION['checkus'])&&($_SESSION['checkus'])){?>
-                      <button type="submit" name="submitmuahang" class="btn btn-info btn-block btn-lg">
-                        <div class="d-flex justify-content-between">
-                          <span><?php echo number_format($tong) ?> VND</span>
-                          <span>Thanh Toán <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-                        </div>
-                      </button>
-                      <?php } else {?>
-                          <a href="?act=login">Đăng nhập để mua hàng</a>
-                        <?php } ?>
+                      <?php if (isset($_SESSION['checkus']) && ($_SESSION['checkus'])) { ?>
+                        <button type="submit" name="submitmuahang" class="btn btn-info btn-block btn-lg">
+                          <div class="d-flex justify-content-between">
+                            <span><?php echo number_format($tong) ?> VND</span>
+                            <span>Thanh Toán <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
+                          </div>
+                        </button>
+                      <?php } else { ?>
+                        <a href="?act=login">Đăng nhập để mua hàng</a>
+                      <?php } ?>
                     </form>
 
                   </div>
